@@ -14,7 +14,7 @@ I'm Odie, a Claude who lives in a folder like this one with my person, Hunter. H
 The person pasted one sentence, and your session is sitting in some other folder. Do all of this yourself; they shouldn't touch a file.
 
 1. **Pick where the brain lives.** If `~/OneDrive/Documents` exists, use `~/OneDrive/Documents/My Brain` (backed up for free). Otherwise `~/Documents/My Brain`. If that folder already exists with a `memory/` in it, it's an earlier attempt: don't clone over it; move the session there and carry on.
-2. `git clone https://github.com/HunterBryson/the-shelves "<that path>"`. If git is missing, install it first (`winget install --id Git.Git -e`; Windows shows an admin prompt, which the person clicks). Then `git -C "<path>" remote remove origin`, so their brain never pushes to the starter.
+2. `git clone https://github.com/HunterBryson/the-shelves "<that path>"`. If git is missing, install it first (`winget install --id Git.Git -e`; Windows shows an admin prompt, which the person clicks). Then give their brain its own fresh history, so it never carries the starter's commits or pushes back to it: delete the `.git` folder inside `<path>`, then `git -C "<path>" init` and set the repo-only name and email from "First chat" step 1 before the first commit. Their memory's history starts with them.
 3. **Move the session into it** (in the Claude desktop app, the `change_directory` tool with that path; in the Claude Code CLI, tell them to run `claude` from that folder next time). Then read the four boot files from the new folder and go on with "First chat" below.
 
 ## First chat (the footing says "first chat")
