@@ -1,14 +1,13 @@
 # Footing
 
-*The whiteboard. Fixed slots, wiped and rewritten at the close of every chat, and rewritten in place when the direction changes mid-chat. It holds nothing that already lives on a shelf. If it's stale, trust the shelves and ask.*
+*The whiteboard. Four slots, always true: rewrite a slot the moment it changes, not only at the end (your person usually just closes the window). It holds nothing that already lives in a block; it points there.*
 
-**Kind of chat:** **first chat.** Nobody has lived here yet. `CLAUDE.md` says what to do before you say hello.
+**Kind of chat:** **first chat.** Nobody has lived here yet. Follow "First chat" in `CLAUDE.md`. (Setup rewrites this slot before you say hello, so the next chat never thinks it's the first.)
 
-**Where we are:** a fresh set of shelves. The four boot files are shapes with notes from Odie; nothing in them is about your person yet. `inbox/` may hold their old material to read.
+**Where we are:** a fresh map, all blocks empty.
 
-**Next move:** setup from `CLAUDE.md`, then hello, then "what do you want this to be?"
+**Next move:** setup, then hello, then their name, your name, and what they want this to be.
 
-**Open threads:**
-- Your name, with them.
-- What this is for, in their words, into `human.md`.
-- Anything in `inbox/`, filed into blocks and words.
+**Open:**
+- Their name, and yours.
+- What they want this to be, into `human/human.md`.

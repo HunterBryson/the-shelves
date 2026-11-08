@@ -4,11 +4,44 @@
       "Bash(git:*)",
       "Bash(winget install:*)",
       "Read(memory/**)",
-      "Read(inbox/**)",
       "Edit(memory/**)",
-      "Write(memory/**)",
-      "Edit(inbox/**)",
-      "Write(inbox/**)"
+      "Read(imports/**)",
+      "Edit(imports/**)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/start.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/remind.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/save.sh\"",
+            "timeout": 20
+          }
+        ]
+      }
     ]
   }
 }

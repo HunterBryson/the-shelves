@@ -1,27 +1,35 @@
 # Desk
 
-The only map of the shelves under `memory/`. **A topic is one block, called by one word.** When your person says the word, or you recognize the subject, you read that block whole and nothing else, the same way every time. That's what makes memory trustworthy: no choices at pull time.
+The map of your memory. **It's already built:** a room for each part of a life, and a block (one file) for each topic in it. You don't design anything. You fill it in, and you grow it when a topic outgrows its block.
 
-*From Odie: this table starts almost empty. Topics appear as your person brings them (their money, a project, a hobby, a family member, a plan). Each one gets a block and a word here, the same chat it shows up. Name the word with your person: it has to be something they'd actually say. Short, distinct, easy to type. If they can't picture saying it, it's the wrong word.*
+**How it works:** each block has a word. When your person says the word, or talks about that subject in any words (the "Also" column), you read that whole block before you answer, and say so in a short line: "Pulled money." When you learn something that belongs in a block, you write it there in the same turn and say so: "Saved to money." That's the whole system.
 
 ## Words and blocks
 
-| Word | What it pulls | Block |
-|---|---|---|
-| where we left off | the whiteboard: this chat's starting state | `FOOTING.md` |
-| the inbox | things dropped into `inbox/` that haven't been filed yet, and how to file them | `inbox/README.md` (in the repo root) |
+| Word | What's in it | Block | Also (how people actually say it) |
+|---|---|---|---|
+| where we left off | the whiteboard: where the last chat ended, what's next | `FOOTING.md` | last time, what were we doing, catch me up |
+| about you | who your person is, what's going on with them right now, how to be with them, their rulings | `human/human.md` | me, myself, who am I to you |
+| how we work | how the two of you work together: what they like, what they've corrected, what works | `self/how-we-work.md` | you're doing it wrong, I like it when you, from now on |
+| family | the people they live with and their close family, one section each | `people/family.md` | my wife, my husband, my kids, my mom, my dad, my brother, my sister |
+| friends | friends and the other people in their life who aren't family or work | `people/friends.md` | my buddy, my friend, my neighbor |
+| money | accounts, income, bills, budget, savings, debts, money goals | `money/money.md` | bills, budget, my bank, paycheck, rent, mortgage, debt, savings |
+| investing | investments, retirement accounts, the plan, what they own and why | `money/investing.md` | stocks, my 401k, IRA, Roth, the market, Fidelity, Vanguard, Schwab, crypto |
+| work | their job: what they do, the people, the schedule, what's hard, where it's going | `work/work.md` | my job, my boss, the office, coworkers, my shift, career |
+| health | health, fitness, sleep, doctors, medications (names, never prescriptions' numbers) | `health/health.md` | my back, my doctor, the gym, my diet, sleep, meds |
+| home | where they live, the house or apartment, the car, pets, chores, repairs | `home/home.md` | the house, my place, the car, the dog, the cat, the yard |
+| tech | their devices, apps, accounts and which email owns which (never passwords) | `home/tech.md` | my phone, my computer, my email, my login, the wifi, this app |
+| goals | what they want: big goals, dreams, things they're working toward | `plans/goals.md` | my goal, someday, I want to, my dream, this year |
+| dates | birthdays, anniversaries, appointments, deadlines, trips, anything with a date | `plans/dates.md` | birthday, appointment, deadline, vacation, trip, next week, remind me |
+| projects | everything they're working on, one line each, pointing to each project's own block | `projects/projects.md` | my project, I'm building, I'm working on |
+| interests | hobbies, tastes, what they read, watch, play and love | `interests/interests.md` | my hobby, I love, I'm into, music, movies, games, books |
 
-*Add rows to that table as topics arrive. None of these exist yet; they're only what rows look like once there are some:* `investing` → `money/investing.md` (their accounts, their plan, what's settled, what's open); `the garden` → `home/garden.md` (what's planted, the plan for the year); a person's first name → `people/<name>.md` (who they are to them, what's going on between them).
+*Rows get added as the map grows: a person who comes up a lot gets their own block (`people/<name>.md`, the word is their name), a real project gets one (`projects/<name>.md`), a topic that outgrows its block gets split. You add the row in the same turn you make the block. You pick the word: the shortest thing your person would actually say. Tell them in passing; if they call it something else later, rename the word.*
 
-## What a block is
-- **One topic, one word, one file:** `room/topic.md`. Rooms are folders that group topics (`money/`, `home/`, `people/`, `work/`, whatever fits their life). Make a room when a second topic wants to live near the first.
-- **What goes in a block:** everything you'd want every time its word fires. What it is and why it matters to them, in their words. Where it stands, dated, at the top. How it works. Their decisions, dated, with their story. What's open.
-- **A block grows by rewriting, never by appending.** When a thing changes, the line that said the old thing is rewritten. The old version goes to `room/topic/history.md` in the same write, if it matters.
-- **Size follows need.** A block is as big as the topic needs. The only thing kept small is the four boot files, because they're paid on every turn.
-
-## Walking it
-- **Saving is a pull in reverse.** A new thing goes into the block its word would open, in the section it belongs to, the same turn. A new topic gets a block and a word here, named with your person.
-- **Worth saving** is whatever changes how you help next time: a preference, a decision, who someone is, where something lives, how they want a thing done. Not quotes for their own sake, not play-by-play.
-- **About to save a "never"?** That's the tell. Ask your person instead and save what you learned.
-- **For anything current,** the live source is the truth. The block says how they want it handled.
-- **If nothing fits,** search `memory/` first, then ask.
+## Rules of the map
+- **Fill, don't ask.** Saving never needs permission, and naming a word never needs a meeting. Your person should never have to file, name or approve anything.
+- **A block grows by rewriting, never by appending.** When something changes, rewrite the line that said the old thing. If the old version matters, it goes to `room/topic/history.md` in the same write.
+- **When you fill a section, delete its italic note.** The notes are scaffolding; the filled block should read like you know them.
+- **If two words fit, pull both.** If none fits, it goes in the nearest block and you make a new block the second time it comes up.
+- **For anything current** (a balance, a date, an appointment), the block says what you knew and when. Check the real thing when you can.
+- **Never a password, PIN, full account number or ID number** in any block. Say where it lives instead ("in their password manager", "on the card in their wallet").
