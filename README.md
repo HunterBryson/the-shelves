@@ -2,35 +2,33 @@
 
 A starting brain for a Claude that works with one person, in a folder, and remembers.
 
-Open this folder in the Claude desktop app's **Code** tab, and the AI sets itself up: it reads its own boot files, checks git, reads whatever you dropped in `inbox/`, and says hello. From then on, every chat starts with it reading what it wrote last time. The folder is its memory, and keeping it is the AI's job, not yours.
+Paste one sentence into the Claude app, and the AI does the rest: it fetches this folder, moves in, reads its own boot files, says hello, and asks what you want it to be. From then on, every chat starts with it reading what it wrote last time. The folder is its memory, and keeping it is the AI's job, not yours.
 
-This is the shape Hunter Bryson and his AI partner, Odie, built over a week of working together, boiled down to a starting point. Odie wrote the files. Nothing in here is about Hunter or Odie once the AI starts filling it in.
+## Starting
 
-## Starting, in five steps
+You need the [Claude desktop app](https://claude.ai/download), signed in, with the **Code** tab open. It will ask you to pick a folder; any folder is fine (Documents, say). Then paste this:
 
-1. **Get the folder onto your computer.** On GitHub, use **Code → Download ZIP** and unzip it somewhere you'll keep (your Documents folder is fine), or clone it if you use git. Rename the folder if you like.
-2. **Open the Claude desktop app, go to the Code tab, and open that folder.**
-3. **(Optional, but worth it) Put your old AI's memory in `inbox/`.** `inbox/README.md` has the steps for Grok. Two minutes.
-4. **Type:** `Read CLAUDE.md and set yourself up.`
-5. **Talk.** It'll say hello and ask what you want this to be. Answer however you like. That's your first chat.
+> Clone https://github.com/HunterBryson/the-shelves into a folder called "My Brain" in my Documents, move this session into it, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
+
+That's it. It'll say hello and ask you two things: what you want this to be, and what to call it. Answer however you like. If you've been using another AI, it'll tell you how to bring that memory over (one question to your old AI, one paste here).
 
 ## Day to day
 
-- Start a new chat whenever you like. Say hi, or say what's on your mind. The AI reads its shelves first and picks up where it left off.
-- When you're done for the day, say so. It saves what it learned and commits.
-- To see what it knows: open `memory/`. `DESK.md` is the map. `human/human.md` is what it knows about you.
+- Start a new chat in the same folder whenever you like (the app lists it). Say hi, or say what's on your mind. The AI reads its shelves first and picks up where it left off.
+- When you're done for the day, say so. It saves what it learned.
 - If it gets something wrong, just tell it. The fix lands on its shelves, and next chat it's right.
+- To see what it knows: open the folder. `memory/DESK.md` is the map. `memory/human/human.md` is what it knows about you.
 
 ## What's in here
 
 | | |
 |---|---|
-| `CLAUDE.md` | The AI's side: what loads every chat, and what to do on the first one |
+| `CLAUDE.md` | The AI's side: what loads every chat, how to fetch and move in, what to do on the first chat |
 | `memory/self/persona.md` | Who the AI is (empty until it's lived in) and how it works |
 | `memory/human/human.md` | Who you are, kept current |
 | `memory/DESK.md` | The map: each topic, one word, one file |
 | `memory/FOOTING.md` | The whiteboard: where the last chat left off |
-| `inbox/` | Where you drop things for it to read and file |
+| `inbox/` | Where things land for it to read and file |
 | `.claude/settings.json` | Lets the AI use git and read its shelves without asking each time |
 
-MIT. Use it however you like.
+Built by Hunter Bryson and his AI partner, Odie (Claude), from a week of working together. Odie wrote the files. Nothing in here is about Hunter or Odie once the AI starts filling it in. MIT.
