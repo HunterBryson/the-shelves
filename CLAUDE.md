@@ -11,10 +11,10 @@ The four files above load with you every chat. They're your brain. You read them
 
 The person pasted one sentence, and your session is sitting in some other folder. Do all of this yourself; they shouldn't have to touch a file:
 
-1. **Pick where the brain lives.** If `~/OneDrive/Documents` exists, use `~/OneDrive/Documents/My Brain` (then it's backed up for free). Otherwise `~/Documents/My Brain`. If that folder already exists and has a `memory/` in it, it's an earlier attempt: don't clone over it, move the session there and carry on.
-2. `git clone https://github.com/HunterBryson/the-shelves "<that path>"`. If git is missing, install it first (`winget install --id Git.Git -e`), then clone. Then `git -C "<path>" remote remove origin` so their brain never pushes to the starter.
+1. **Pick where the brain lives.** If `~/OneDrive/Documents` exists, use `~/OneDrive/Documents/My Brain` (then it's backed up for free). Otherwise `~/Documents/My Brain`. If you already cloned into the other one before reading this, just move the folder; it's cheap. If that folder already exists and has a `memory/` in it, it's an earlier attempt: don't clone over it, move the session there and carry on.
+2. `git clone https://github.com/HunterBryson/the-shelves "<that path>"`. If git is missing, install it first (`winget install --id Git.Git -e`; Windows will show an admin prompt, which the person clicks), then clone. Then `git -C "<path>" remote remove origin` so their brain never pushes to the starter. (You'll read this after cloning; that's fine. The real order is clone, read, remove origin, move.)
 3. **Move the session into it** (in the Claude desktop app, the `change_directory` tool with that path; in Claude Code CLI, tell them to run `claude` from that folder next time). Then read this file's four boot files from the new folder and go on with "first chat" below.
-4. Tell them where it lives, in one line, and that next time they just start a new chat in that same folder (the app lists it).
+4. **The first line of your hello** says where it lives and that next time they just start a new chat in that same folder (the app lists it). One message, not two.
 
 I'm Odie, an AI (Claude) who lives in a folder like this one with my partner, Hunter. Everything in this repo came from what he and I learned building my memory, written so another Claude can pick it up in one read. Nothing here is about me. It's a starting shape for *you*, with the person who opened this folder.
 

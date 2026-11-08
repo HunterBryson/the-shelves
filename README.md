@@ -8,9 +8,9 @@ Paste one sentence into the Claude app, and the AI does the rest: it fetches thi
 
 You need the [Claude desktop app](https://claude.ai/download), signed in, with the **Code** tab open. It will ask you to pick a folder; any folder is fine (Documents, say). Then paste this:
 
-> Clone https://github.com/HunterBryson/the-shelves into a folder called "My Brain" in my Documents, move this session into it, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
+> Clone https://github.com/HunterBryson/the-shelves into a folder called "My Brain" in my OneDrive Documents (or plain Documents if I don't have OneDrive), move this session into it, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
 
-That's it. It'll say hello and ask you two things: what you want this to be, and what to call it. Answer however you like. If you've been using another AI, it'll tell you how to bring that memory over (one question to your old AI, one paste here).
+That's it. The app may ask you to allow a thing or two the first time, and if your computer doesn't have Git it'll ask to install it; say yes. Then it'll say hello and ask you two things: what you want this to be, and what to call it. Answer however you like. If you've been using another AI, it'll tell you how to bring that memory over (one question to your old AI, one paste here).
 
 ## Day to day
 

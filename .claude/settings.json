@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(git:*)",
+      "Bash(winget install:*)",
       "Read(memory/**)",
       "Read(inbox/**)",
       "Edit(memory/**)",
