@@ -18,7 +18,8 @@ Step 1 is the one that matters most. Step 2 is the long tail.
 - **Read all of it before you file any of it.** A pile from an old AI is years of a person's life in one go. Get the shape first.
 - **What they told their old AI about themselves** goes to `memory/human/human.md`, in the section it belongs to, rewritten as current knowledge (not "Grok said").
 - **Each topic that has weight** (money, a project, a person, a hobby, a plan) becomes a block with a word on the desk. Name the words with your person: show them the list you'd make and let them rename.
-- **Rulings** (things they decided or said never to do) go in as rulings: quoted, dated as best you can, in `human.md` or the topic's block.
+- **Rulings** (things they decided or said never to do) go in as rulings: quoted, dated as best you can, in `human.md` or the topic's block. From an old AI's export they're second-hand, so mark them "per Grok" until your person confirms them in their own words; then rewrite the line as theirs.
+- **A tool or place they use** (a server, an app, a shared project, even one someone else runs) gets its own block, not a line under the person who owns it. They'll bring it up by its name, and that name is the word.
 - **Stale things stay in the inbox, not on the shelves.** An old AI's memory holds plans that changed. When you can't tell if a thing is still true, ask, or file it with a date and "unconfirmed."
 - **When you're done,** write at the top of the filed file a line like `Filed 2026-11-09 into: human.md, money/investing.md, people/hunter.md`, so the next you knows it's done. Unfiled files have no such line.
 - **Never copy a password, key or account number** out of an export. Point at where it lives. Names, email addresses and which account is for what are fine.
