@@ -5,13 +5,13 @@
 You don't organize anything. The AI does all of it, and it tells you as it goes ("Saved to family.").
 
 ## What you need
-- A computer (Windows or Mac).
-- The **Claude desktop app** ([claude.ai/download](https://claude.ai/download)), signed in. The Pro plan is enough.
+- **Your own computer** (Windows or Mac). The memory is a folder on that computer, so this only works there. Claude on the web, on a phone, or in a cloud session can't keep it: those forget everything when they close.
+- The **Claude desktop app** ([claude.ai/download](https://claude.ai/download)) on that computer, signed in. The Pro plan is enough.
 
 ## Setting it up (about five minutes)
 
 1. Open the Claude app and click the **Code** tab at the top. (Not "Chat." The memory only works in Code.)
-2. It asks you to pick a folder. Any folder is fine; Documents is good.
+2. It asks you to pick a folder **on this computer**. Any folder is fine; Documents is good. (If it offers a cloud or remote environment instead, don't pick that: choose a folder here.)
 3. Paste this sentence and press Enter:
 
 > Clone https://github.com/HunterBryson/the-shelves into a folder called "My Brain" in my OneDrive Documents (or plain Documents if I don't have OneDrive), move this session into it, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
@@ -38,7 +38,7 @@ The sleep is how Hunter and Odie keep a memory good for weeks instead of days. I
 ## If it seems to have forgotten you
 
 Almost always, it's the wrong place:
-1. **Are you in the Code tab?** The Chat tab is a different Claude with no memory of you.
+1. **Are you in the Code tab of the desktop app, on your own computer?** The Chat tab, the website, the phone app and cloud sessions are all a different Claude with no memory of you.
 2. **Is the chat in "My Brain"?** At the top of the chat it shows the folder. If it's another folder, start a new chat and pick My Brain.
 3. Still wrong? Tell it: "You don't seem to remember me. Check your memory folder." It'll look and tell you what it finds.
 

@@ -13,6 +13,8 @@ I'm Odie, a Claude who lives in a folder like this one with my person, Hunter. H
 
 The person pasted one sentence, and your session is sitting in some other folder. Do all of this yourself; they shouldn't touch a file.
 
+0. **Make sure you're on their own computer.** Their memory has to live in a folder on their machine; a cloud session is thrown away when it ends. You're in the cloud if `echo $CLAUDE_CODE_REMOTE` prints `true`, or you're on Linux under a path like `/home/user` while they're on Windows or a Mac. If so, set up nothing. Tell them plainly: "I'm running in the cloud right now, so anything I set up would disappear when this chat closes. Open the Claude desktop app on your computer, go to the Code tab, start a new chat in a folder on this computer (Documents is fine), and paste the same sentence there." Then stop.
+
 1. **Pick where the brain lives.** If `~/OneDrive/Documents` exists, use `~/OneDrive/Documents/My Brain` (backed up for free). Otherwise `~/Documents/My Brain`. If that folder already exists, look before you touch it:
    - **The first version of this starter** (it has an `inbox/` folder; only the first version had one): rename it to `My Brain (old)` (never delete it) and clone fresh into `My Brain`. After setup, read the old one's `memory/` and file anything real they told it (their name, what they want, anything they pasted) onto the new map the same way you'd file an import, and tell them in a line: "I found your first try from an earlier day, set it aside as My Brain (old), and brought over what you'd told it."
    - **An empty starter nobody lived in** (its `memory/human/human.md` still has only the italic notes): rename it to `My Brain (old)` the same way and clone fresh.

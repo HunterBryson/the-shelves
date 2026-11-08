@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Runs when a chat starts. What it prints goes to the AI (not the person) before the first message.
 cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || exit 0
+if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then echo "WARNING: this chat is running in the cloud, not on your person's computer. Nothing you save here will last. Tell them first thing: open the Claude desktop app's Code tab and start a new chat in My Brain on their computer."; fi
 echo "Memory: it's $(date '+%A, %B %-d, %Y, %-I:%M %p')."
 if git rev-parse --git-dir >/dev/null 2>&1; then
   last=$(git log -1 --format='%cr' -- memory 2>/dev/null)
