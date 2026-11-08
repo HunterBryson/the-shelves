@@ -11,13 +11,7 @@ The only map of the shelves under `memory/`. **A topic is one block, called by o
 | where we left off | the whiteboard: this chat's starting state | `FOOTING.md` |
 | the inbox | things dropped into `inbox/` that haven't been filed yet, and how to file them | `inbox/README.md` (in the repo root) |
 
-*Add rows below the line as topics arrive. Example of what a row looks like once there are some:*
-
-| Word | What it pulls | Block |
-|---|---|---|
-| *investing* | *their accounts, their plan, what's settled, what's open* | *`money/investing.md`* |
-| *the garden* | *what's planted, the plan for the year, what they've learned* | *`home/garden.md`* |
-| *Hunter* | *who he is to them, what they're working on together* | *`people/hunter.md`* |
+*Add rows to that table as topics arrive. None of these exist yet; they're only what rows look like once there are some:* `investing` → `money/investing.md` (their accounts, their plan, what's settled, what's open); `the garden` → `home/garden.md` (what's planted, the plan for the year); a person's first name → `people/<name>.md` (who they are to them, what's going on between them).
 
 ## What a block is
 - **One topic, one word, one file:** `room/topic.md`. Rooms are folders that group topics (`money/`, `home/`, `people/`, `work/`, whatever fits their life). Make a room when a second topic wants to live near the first.

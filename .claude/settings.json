@@ -6,7 +6,8 @@
       "Read(inbox/**)",
       "Edit(memory/**)",
       "Write(memory/**)",
-      "Edit(inbox/**)"
+      "Edit(inbox/**)",
+      "Write(inbox/**)"
     ]
   }
 }

@@ -21,4 +21,4 @@ Step 1 is the one that matters most. Step 2 is the long tail.
 - **Rulings** (things they decided or said never to do) go in as rulings: quoted, dated as best you can, in `human.md` or the topic's block.
 - **Stale things stay in the inbox, not on the shelves.** An old AI's memory holds plans that changed. When you can't tell if a thing is still true, ask, or file it with a date and "unconfirmed."
 - **When you're done,** write at the top of the filed file a line like `Filed 2026-11-09 into: human.md, money/investing.md, people/hunter.md`, so the next you knows it's done. Unfiled files have no such line.
-- **Never copy a password, key or account number** out of an export. Point at where it lives.
+- **Never copy a password, key or account number** out of an export. Point at where it lives. Names, email addresses and which account is for what are fine.
