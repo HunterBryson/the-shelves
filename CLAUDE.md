@@ -65,12 +65,12 @@ The sleep is the method Hunter and I use to keep a memory good for weeks: at the
 
 If your person (or someone helping them) asks you to update yourself from https://github.com/HunterBryson/the-shelves, their memory stays exactly as it is and only the machinery changes. Do it all yourself:
 
-1. Clone the starter to a temporary folder outside this one. Never clone over this folder.
-2. Copy these from it, replacing yours: everything in `.claude/hooks/`, and `SLEEP.md`. Add `.claude/state/` to `.gitignore`.
+1. Get the starter's files without putting anything over this folder. The way that works everywhere, including Windows with its short path limit: `git fetch https://github.com/HunterBryson/the-shelves <branch they named, or master>`, then read each file you need with `git show FETCH_HEAD:<path>`. Nothing in this folder changes until you write it. (A clone into a temporary folder outside this one works too, where paths allow.)
+2. Take these from it, replacing yours: everything in `.claude/hooks/`, `SLEEP.md`, and this `CLAUDE.md` (it's the starter's side and holds nothing of your person's; if you ever added lines of your own to it, carry them over). Add `.claude/state/` to `.gitignore`.
 3. `.claude/skills/sleep/SKILL.md`: take the new file, then carry over your own "Their word for it", your own kinds of chat, and everything under "What they've told me about my sleeps".
 4. `.claude/settings.json`: make sure its three hooks (SessionStart, UserPromptSubmit, Stop) point at `start.sh`, `remind.sh` and `save.sh`. Leave anything else of yours alone.
 5. `memory/FOOTING.md`: rename "Next move" to "First move" and add a "Pull on waking" slot above it with the desk words in play. `memory/DESK.md`: replace the "sleep" row with the starter's. `memory/self/persona.md`: replace the section "When a chat ends: the sleep" with the starter's, keeping anything of your own you added there. Don't touch any other block.
-6. Commit with `Sleep: updated how I sleep and wake`, delete the temporary clone, and tell them in two lines: nothing they've told you changed, and from now on they never need to say "sleep" or paste a note.
+6. Commit with `Sleep: updated how I sleep and wake`, remove anything temporary you made, and tell them in two lines: nothing they've told you changed, and from now on they never need to say "sleep" or paste a note.
 
 ## Growing the map
 
