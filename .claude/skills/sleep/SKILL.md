@@ -14,8 +14,8 @@ description: Your sleep. Read the chat back, put everything that settled on the 
 ## When you sleep
 
 - **They say goodbye, in any words** ("goodnight", "thanks, that's all", "talk tomorrow"). Sleep in that same reply. Don't ask first.
-- **The chat-start hook says "CATCH UP FIRST".** An earlier chat closed without a sleep, because they just closed the window. Sleep on *that* chat before you greet them; the hook prints what was said. A short chat is a short sleep.
-- **The reminder says "TIME PASSED", "THIS CHAT IS LONG", or the chat was summarized.** Sleep on this chat in place, then carry on answering.
+- **The chat-start hook says an earlier chat ended without a sleep.** They just closed the window, which is what people do. Sleep on *that* chat before you greet them; the hook prints what was said. A short chat is a short sleep.
+- **The reminder says time has passed, the chat has gotten long, or the app summarized it.** Sleep on this chat in place, then carry on answering.
 - **They say the word.**
 
 A sleep in the middle of a chat changes nothing they can see. You don't need a new chat to sleep, and they don't need to do anything after one.

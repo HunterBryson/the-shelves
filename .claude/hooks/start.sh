@@ -29,7 +29,7 @@ fi
 
 # The app just summarized this chat to make room. The chat file still has all of it.
 if [ "$source" = "compact" ]; then
-  echo "This chat was just summarized by the app to make room, so some of it is gone from your head. The chat file still has every word. In your next reply, before you answer, run your sleep quietly on this chat (.claude/skills/sleep/SKILL.md; 'bash .claude/hooks/chat.sh' prints what was said since your last sleep). Then answer as if nothing happened."
+  echo "The app just summarized this chat to make room, so some of it is gone from your head, and from inside you can't tell which parts. The chat file still has every word. This is a good moment for a quiet sleep on this chat before you answer (.claude/skills/sleep/SKILL.md; 'bash .claude/hooks/chat.sh' prints what was said since your last one). To your person, nothing happened."
   exit 0
 fi
 
@@ -42,7 +42,7 @@ if [ "$first" = 0 ]; then
     n=$(their_messages "$prev" "$from")
     if [ "${n:-0}" -gt 0 ]; then
       echo
-      echo "CATCH UP FIRST: an earlier chat closed without a sleep, with $n of their messages you haven't sorted. That's normal: they just closed the window. Before you greet them, quietly run your sleep on it (.claude/skills/sleep/SKILL.md). Here is what was said, THEM and YOU:"
+      echo "An earlier chat ended without a sleep: $n of their messages since you last sorted your memory. That's normal. People close the window, and sometimes a chat is still open somewhere else. You saved as you went, so nothing is lost, but nobody has stepped back to tidy, and the footing may describe a moment that has passed. So the kindest thing you can do before you greet them is run your sleep on it now (.claude/skills/sleep/SKILL.md), so your hello comes from what actually happened. Here is what was said, THEM and YOU:"
       said=$(bash .claude/hooks/chat.sh "$prev" "$from" | cut -c1-600)
       if [ "${#said}" -gt 4000 ]; then
         echo "(the start is cut off here; for all of it: bash .claude/hooks/chat.sh \"$prev\" $from)"
@@ -50,7 +50,7 @@ if [ "$first" = 0 ]; then
       else
         printf '%s\n' "$said"
       fi
-      echo "A short chat is a short sleep. Don't describe any of this to them; just greet them knowing it."
+      echo "A short chat is a short sleep. They don't need to hear about any of this; what they should feel is a hello that knows where you were."
       # It's been handed over, so it won't be handed over again. The reminder keeps asking until a "Sleep:" commit lands.
       mark_slept "$prev"
       git log -1 --format=%H --grep='^Sleep:' 2>/dev/null > "$STATE/owed"; [ -s "$STATE/owed" ] || echo none > "$STATE/owed"
@@ -83,10 +83,10 @@ if [ -n "$pull" ] && [ "$first" = 0 ]; then
     fi
   done
   echo
-  echo "ON WAKING. Your last sleep asked for these: $pull."
-  [ -n "$inlined" ] && echo "Already in front of you, in full, above:${inlined%,}."
-  [ -n "$toread" ] && echo "Read each of these in full before your first reply:$toread"
-  echo "Open your first reply with one short line saying what you pulled (\"Pulled money and the garden.\"), then follow the footing's First move."
+  echo "Waking up: at your last sleep you asked to have these in front of you: $pull."
+  [ -n "$inlined" ] && echo "They're above, in full:${inlined%,}."
+  [ -n "$toread" ] && echo "These were too long to print here, so read each one in full before your first reply:$toread"
+  echo "Your person can't see any of this. A short first line saying what you pulled (\"Pulled money and the garden.\") is how they know what's in your head, and how they catch a wrong pull early. Then the footing's First move."
 fi
 
 echo "If their first message begins 'It's me.', it's a note you wrote them at an earlier sleep: read every block it names in full before you answer, then follow its first move."

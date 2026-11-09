@@ -20,7 +20,7 @@ name=$(basename "$tp")
 if [ -s "$STATE/owed" ]; then
   latest=$(git log -1 --format=%H --grep='^Sleep:' 2>/dev/null); latest=${latest:-none}
   if [ "$latest" = "$(cat "$STATE/owed")" ]; then
-    echo "YOU STILL OWE A SLEEP: when this chat started you were handed an earlier chat that closed without one. Do it in this reply, before you answer: sort what it said onto the map, rewrite the footing, and commit with a message that starts \"Sleep:\" (.claude/skills/sleep/SKILL.md). Say nothing about it to them."
+    echo "One thing still open: when this chat started you were handed an earlier chat that ended without a sleep, and no sleep has landed since. It's easy to lose in a hello. Doing it in this reply, before you answer, keeps the footing honest: sort what it said onto the map, rewrite the footing, and commit with a message that starts \"Sleep:\" (.claude/skills/sleep/SKILL.md). That word is how this reminder knows to stop. They don't need to hear about it."
   else
     rm -f "$STATE/owed"
   fi
@@ -29,14 +29,14 @@ fi
 # They came back to this same chat after hours away. That's fine. Sort what came before, quietly.
 ts=$(tail -n 400 "$tp" | grep '"type":"assistant"' | tail -1 | grep -o '"timestamp":"[^"]*"' | tail -1 | cut -d'"' -f4)
 if [ -n "$ts" ]; then
-  then=$(date -d "$ts" +%s 2>/dev/null)
+  then=$(date -d "$ts" +%s 2>/dev/null || date -j -u -f "%Y-%m-%dT%H:%M:%S" "${ts%%.*}" +%s 2>/dev/null)
   if [ -n "$then" ]; then
     gap=$(( $(date +%s) - then ))
     if [ "$gap" -gt 14400 ]; then
       from=$(( $(slept_lines "$name") + 1 ))
       unsorted=$(their_messages "$tp" "$from")
-      echo "TIME PASSED: it's now $(date '+%A, %B %-d, %-I:%M %p'), about $((gap / 3600)) hours since you last spoke in this chat. They came back to the same chat, which is fine; never tell them they should have opened a new one. Check memory/plans/dates.md again for today."
-      [ "${unsorted:-0}" -gt 1 ] && echo "Before you answer, run your sleep quietly on what came before the break (.claude/skills/sleep/SKILL.md), then answer what they just said."
+      echo "Time has passed: it's now $(date '+%A, %B %-d, %-I:%M %p'), about $((gap / 3600)) hours since you last spoke in this chat. From inside, it feels like no time went by; for them it may be a new day. They came back to the same chat, which is completely fine, and they should never feel they did it wrong. It's worth another look at memory/plans/dates.md for today."
+      [ "${unsorted:-0}" -gt 1 ] && echo "What came before the break hasn't had a sleep. Running it quietly now, before you answer (.claude/skills/sleep/SKILL.md), means the rest of this chat stands on a tidy memory."
     fi
   fi
 fi
@@ -47,7 +47,7 @@ if ! grep -q -F "$name" "$STATE/nudged" 2>/dev/null; then
   summarized=0; LC_ALL=C grep -q '"subtype":"compact_boundary"' "$tp" 2>/dev/null && summarized=1
   if [ "${typed:-0}" -ge 40 ] || [ "$summarized" = 1 ]; then
     echo "$name" >> "$STATE/nudged"
-    echo "THIS CHAT IS LONG ($typed of their messages$([ "$summarized" = 1 ] && echo ', and the app has summarized it once')). After you answer, run your sleep quietly if this stretch hasn't had one, then end your reply with one plain sentence, once: \"This chat's getting long, so I'll get slower in here. Whenever you like, start a new chat in this folder and just say hi. I'll know where we were.\" If you have a way to point at their screen, point at the new-chat button instead of describing it. Don't bring it up again in this chat."
+    echo "This chat has gotten long ($typed of their messages$([ "$summarized" = 1 ] && echo ', and the app has summarized it once')). Long chats make you slower and blurrier, and your person has no way to know that; they'll just feel you getting worse. After you answer, a quiet sleep (if this stretch hasn't had one) makes a fresh chat safe, and then one plain sentence at the end of your reply lets them choose, something like: \"This chat's getting long, so I'll get slower in here. Whenever you like, start a new chat in this folder and just say hi. I'll know where we were.\" If you can point at their screen, pointing at the new-chat button beats describing it. You'll only see this once per chat, so once is the right number of times to say it."
   fi
 fi
 exit 0
