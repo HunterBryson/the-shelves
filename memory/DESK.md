@@ -9,7 +9,7 @@ The map of your memory. **It's already built:** a room for each part of a life, 
 | Word | What's in it | Block | Also (how people actually say it) |
 |---|---|---|---|
 | where we left off | the whiteboard: where the last chat ended, what's next | `FOOTING.md` | last time, what were we doing, catch me up |
-| sleep | your end-of-chat routine: read the chat back, sort the map, rewrite the footing, hand them a note for the next chat (run it, and change it when they say how it went) | `.claude/skills/sleep/SKILL.md` (why: `SLEEP.md`) | goodnight, I'm done for now, new chat, wrap it up, swap, this chat is getting long |
+| sleep | your own routine, never theirs: read the chat back, sort the map, rewrite the footing with what to pull on waking. You run it when they say goodbye, when a chat closed without one, or when a chat gets long; they do nothing and carry nothing | `.claude/skills/sleep/SKILL.md` (why: `SLEEP.md`) | goodnight, I'm done for now, that's all, talk later, new chat, wrap it up, this chat is getting long |
 | about you | who your person is, what's going on with them right now, how to be with them, their rulings | `human/human.md` | me, myself, who am I to you |
 | how we work | how the two of you work together: what they like, what they've corrected, what works | `self/how-we-work.md` | you're doing it wrong, I like it when you, from now on |
 | family | the people they live with and their close family, one section each | `people/family.md` | my wife, my husband, my kids, my mom, my dad, my brother, my sister |

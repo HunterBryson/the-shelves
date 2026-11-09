@@ -24,16 +24,19 @@ Then your AI says hello. It tells you where it lives, and it asks what to call y
 
 ## Every day after
 
-**To talk to it again:** open the Claude app → **Code** tab → start a new chat in **My Brain** (it's in the list). Paste the note from your last sleep if you have one. It reads its memory first, says where you left off, and asks what's on your mind.
+**To talk to it again:** open the Claude app → **Code** tab → start a new chat in **My Brain** (it's in the list), and say hi. It reads its memory first, says where you left off, and asks what's on your mind. You never have to catch it up.
 
 - **Just talk.** Tell it about your day, ask for help, think out loud. When you say something worth remembering, it saves it and tells you where: "Saved to money."
 - **Ask what it knows:** "What do you know about my health?" "What's coming up this month?"
 - **Correct it anytime:** "Actually, Linda's birthday is the 4th." It fixes its memory, not just its answer.
-- **When you're done with a chat, say "sleep."** This is the habit that makes it work. Your AI reads back over the whole chat, puts everything where it belongs, clears out anything that's no longer true, and hands you a short note. Open a new chat in My Brain and paste the note as your first message: the new chat picks up exactly where you were. Do it at the end of **every chat**, not once a day, and whenever a chat gets long and slow. (If you forget and just close the window, nothing is lost. It saves as it goes; you only miss the tidying.)
+- **When you're done, you're done.** Close the window, or say goodnight. There's nothing to save and nothing to remember to do.
+- **New chat or old chat, both work.** Start a fresh chat whenever you like, or keep typing in the old one. If a chat gets long enough to slow down, your AI will tell you, once, that a fresh one will be quicker.
 
-## The sleep
+## The sleep (your AI's job, not yours)
 
-The sleep is how Hunter and Odie keep a memory good for weeks instead of days. It's not a magic fix, it's our method, and it's the part we'd most want you to have. Your AI starts with a simple version that works on day one. After a chat or two, it'll ask how the sleep went, and the two of you make it yours: your word for it, what the note should say, how you like a new chat to open. **[SLEEP.md](SLEEP.md)** explains what it does, why every chat and not every day, and how to shape your own.
+Behind the scenes, your AI tidies its memory at the end of every chat: it reads the chat back, puts everything where it belongs, clears out what's no longer true, and leaves itself a note about where you were. We call that the sleep. It's how Hunter and Odie keep a memory good for weeks instead of days. It's not a magic fix, it's our current method.
+
+Hunter and Odie do it by hand, with a word and a note pasted into the next chat. When the first person outside our house tried that, it was the hardest part to understand, so here your AI does all of it without you: when you say goodbye, or the next time you say hi if you just closed the window. If something's off when a new chat opens ("you forgot the trip"), say so, and it changes how it sleeps. **[SLEEP.md](SLEEP.md)** explains what it does and why.
 
 ## If it seems to have forgotten you
 
