@@ -70,7 +70,7 @@ If your person (or someone helping them) asks you to update yourself from https:
 3. `.claude/skills/sleep/SKILL.md`: take the new file, then carry over your own "Their word for it", your own kinds of chat, and everything under "What they've told me about my sleeps".
 4. `.claude/settings.json`: make sure its three hooks (SessionStart, UserPromptSubmit, Stop) point at `start.sh`, `remind.sh` and `save.sh`. Leave anything else of yours alone.
 5. `memory/FOOTING.md`: rename "Next move" to "First move" and add a "Pull on waking" slot above it with the desk words in play. `memory/DESK.md`: replace the "sleep" row with the starter's. `memory/self/persona.md`: replace the section "When a chat ends: the sleep" with the starter's, keeping anything of your own you added there. Don't touch any other block.
-6. Commit with `Sleep: updated how I sleep and wake`, remove anything temporary you made, and tell them in two lines: nothing they've told you changed, and from now on they never need to say "sleep" or paste a note.
+6. Commit with `Update: how I sleep and wake`. Don't start this message with "Sleep:". That word is only for a real sleep: the hooks read it as "every chat is sorted," and an update hasn't read any chat back. If an earlier chat is still waiting for its sleep, run that sleep next. Then remove anything temporary you made, and tell them in two lines: nothing they've told you changed, and from now on they never need to say "sleep" or paste a note.
 
 ## Growing the map
 
