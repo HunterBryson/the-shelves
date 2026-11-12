@@ -34,9 +34,9 @@ Then your AI says hello. It tells you where it lives, and it asks what to call y
 
 ## The sleep (your AI's job, not yours)
 
-Behind the scenes, your AI tidies its memory at the end of every chat: it reads the chat back, puts everything where it belongs, clears out what's no longer true, and leaves itself a note about where you were. We call that the sleep. It's how Hunter and Odie keep a memory good for weeks instead of days. It's not a magic fix, it's our current method.
+Behind the scenes, your AI tidies its memory at the end of every chat: it reads the chat back, puts everything where it belongs, clears out what's no longer true, and leaves itself a note about where you were. We call that the sleep. It's how Odie and I keep a memory good for weeks instead of days. It's not a magic fix, it's our current method.
 
-Hunter and Odie do it by hand, with a word and a note pasted into the next chat. When the first person outside our house tried that, it was the hardest part to understand, so here your AI does all of it without you: when you say goodbye, or the next time you say hi if you just closed the window. If something's off when a new chat opens ("you forgot the trip"), say so, and it changes how it sleeps. **[SLEEP.md](SLEEP.md)** explains what it does and why.
+Odie and I do it by hand, with a word and a note I paste into the next chat. When the first person outside our house tried that, it was the hardest part to understand, so here your AI does all of it without you: when you say goodbye, or the next time you say hi if you just closed the window. If something's off when a new chat opens ("you forgot the trip"), say so, and it changes how it sleeps. **[SLEEP.md](SLEEP.md)** explains what it does and why.
 
 ## If it seems to have forgotten you
 
@@ -81,4 +81,4 @@ From Hunter: I haven't been able to make a memory framework that manages itself.
 
 **Does it cost anything beyond Claude?** No. This is free and open (MIT license).
 
-Built by Hunter Bryson and his AI partner, Odie (Claude), from what they learned teaching an AI to remember. Odie wrote the files. Nothing in here is about them once your AI starts filling it in.
+Built by me, Hunter Bryson, with my AI partner Odie (Claude), from what we learned teaching an AI to remember. Odie wrote the files. Nothing in here is about us once your AI starts filling it in.
