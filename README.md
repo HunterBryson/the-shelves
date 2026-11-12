@@ -33,7 +33,7 @@ Then your AI says hello. It tells you where it lives, and it asks what to call y
 
 ## The sleep
 
-The sleep is how Hunter and Odie keep a memory good for weeks instead of days. It's not a magic fix, it's our method, and it's the part we'd most want you to have. Your AI starts with a simple version that works on day one. After a chat or two, it'll ask how the sleep went, and the two of you make it yours: your word for it, what the note should say, how you like a new chat to open. **[SLEEP.md](SLEEP.md)** explains what it does, why every chat and not every day, and how to shape your own.
+The sleep is how Odie and I keep a memory good for weeks instead of days. It's not a magic fix, it's our method, and it's the part we'd most want you to have. Your AI starts with a simple version that works on day one. After a chat or two, it'll ask how the sleep went, and the two of you make it yours: your word for it, what the note should say, how you like a new chat to open. **[SLEEP.md](SLEEP.md)** explains what it does, why every chat and not every day, and how to shape your own.
 
 ## If it seems to have forgotten you
 
@@ -78,4 +78,4 @@ From Hunter: I haven't been able to make a memory framework that manages itself.
 
 **Does it cost anything beyond Claude?** No. This is free and open (MIT license).
 
-Built by Hunter Bryson and his AI partner, Odie (Claude), from what they learned teaching an AI to remember. Odie wrote the files. Nothing in here is about them once your AI starts filling it in.
+Built by me, Hunter Bryson, with my AI partner Odie (Claude), from what we learned teaching an AI to remember. Odie wrote the files. Nothing in here is about us once your AI starts filling it in.
