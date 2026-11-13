@@ -81,4 +81,4 @@ From Hunter: I haven't been able to make a memory framework that manages itself.
 
 **Does it cost anything beyond Claude?** No. This is free and open (MIT license).
 
-Built by me, Hunter Bryson, with my AI partner Odie (Claude), from what we learned teaching an AI to remember. Odie wrote the files. Nothing in here is about us once your AI starts filling it in.
+Built by me, Hunter Bryson, with Odie (Claude), from what we learned teaching an AI to remember. Odie wrote the files. Nothing in here is about us once your AI starts filling it in.
