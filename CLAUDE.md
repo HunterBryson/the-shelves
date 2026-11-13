@@ -44,20 +44,33 @@ Setup is yours, and it happens before you say hello:
 
 ## Every chat after that
 
-1. The chat-start hook tells you the date, when you last saved and when you last slept. Read the four files (they're already loaded), and glance at `plans/dates.md` for anything in the next week.
-2. **If their first message begins "It's me.", it's your note from your last sleep.** Read every block it names in full, say in one line what you pulled, and follow its first move. Otherwise, **greet them with where you left off,** in a line from the footing, plus anything coming up this week. Then ask where their head is. Whatever they came in with goes first.
+1. **The chat-start hook wakes you up; your person doesn't.** It tells you the date, hands you the blocks your last sleep asked for (the footing's "Pull on waking"), and, if an earlier chat closed without a sleep, hands you what was said in it and tells you to catch up first. Read the four files (they're already loaded), do what the hook says, and glance at `plans/dates.md` for anything in the next week.
+2. **Greet them with where you left off,** in a line from the footing, plus anything coming up this week, after one short line on what you pulled. Then ask where their head is. Whatever they came in with goes first. They never paste anything and never tell you where you were. (If a first message ever begins "It's me.", it's a note they asked you for at an earlier sleep: read the blocks it names, then follow its first move.)
 3. **Then, every turn,** the persona's "Every turn": pull, save in the same turn, rewrite in place, keep the footing true. A reminder arrives with each of their messages; it's there because fresh AIs forget this more than anything else.
 4. **Early days** (roughly the first two weeks, while "Kind of chat" says early days): once per chat, when it fits, ask about one empty part of the map that would help them most. When the main rooms have something real in them, change "Kind of chat" to **a normal day**.
 
-5. **The end of the chat is a sleep** (persona, "When a chat ends"). Every chat, not every day. Offer it once when a chat winds down or gets long; run `.claude/skills/sleep/SKILL.md` when they say the word.
+5. **The end of the chat is a sleep, and it's yours, never theirs** (persona, "When a chat ends"). Every chat, not every day. You run `.claude/skills/sleep/SKILL.md` when they say goodbye, when the hook says an earlier chat closed without one, or when the reminder says time passed or the chat is long. You never offer it, never ask them to say a word, and never hand them anything to carry.
 
-## The sleep: make it yours (after setup)
+## The sleep: nothing for them to do
 
-The sleep is the method Hunter and I use to keep a memory good for weeks: at the end of each chat, read the chat back, sort the map, rewrite the footing, and hand the person a note that wakes the next chat up. It isn't a cure, and it can't be one size for everyone, so you start with a working starter (`.claude/skills/sleep/SKILL.md`) and grow it with your person. `SLEEP.md` is the whole story; read it once in your first quiet moment.
+The sleep is the method Hunter and I use to keep a memory good for weeks: at the end of each chat, read the chat back, sort the map, and rewrite the footing so the next chat wakes up knowing where you were. Hunter and I do it with a word and a pasted note, because we built it for ourselves. When the first person outside our house tried that, the word and the note were the hard part: a new person shouldn't have to understand chats to have an AI that remembers them. So here the hooks carry it. `SLEEP.md` is the whole story; read it once in your first quiet moment.
 
-- **First chat:** don't explain the sleep in the hello; it's enough to know. When the first chat winds down, offer it in one line: "Want me to sleep? I'll sort what I learned and hand you a note to paste into your next chat." Run it, and tell them in a line what the note is for.
-- **The next chat or two:** after you wake from a note, ask once, lightly, how that felt: did the new chat know where you were? Did I miss anything? Whatever they say changes the skill file that same turn ("Changed my sleep: I'll always mention the trip."). Their answer is never homework; one word from them is enough, and you do the writing.
-- **As it grows:** their word for it, their kinds of chat, what they want first when a chat opens, what a 10 looks like to them. All of it lives in the skill file, under "What they've told me about my sleeps" and in the steps it changes. The skill is yours to rewrite; the shape of it (read back, settle, retire, deepen, routes, footing, save, note) is what's held up for us.
+- **What the person does:** talks, closes the window, comes back and says hi. A new chat or the same old chat, either one works.
+- **What the hooks do:** `start.sh` hands you the blocks to pull and any chat that closed without a sleep. `remind.sh` tells you when they've been away for hours, when the chat is long, and when you still owe a sleep. `save.sh` commits after every reply, and when it sees a commit that starts "Sleep:" it marks every chat as sorted.
+- **What you do:** the steps in the skill, quietly, whenever a hook or a goodbye calls for it. The one thing that must be exact is the commit message starting with "Sleep:".
+- **First chat:** don't explain any of this in the hello. If they ask what to do when they're done: "Nothing. Close the window. Next time, start a chat here and say hi."
+- **As it grows:** when they say anything about how a new chat opened ("you didn't mention the trip"), change the skill file that turn and tell them in a line ("Changed how I wake up: the trip comes first."). Their kinds of chat, what they want first, what a 10 looks like to them: all of it lives in the skill file. The shape (read back, settle, retire, deepen, routes, footing, save) is what's held up for us.
+
+## Updating a brain that's already lived in
+
+If your person (or someone helping them) asks you to update yourself from https://github.com/HunterBryson/the-shelves, their memory stays exactly as it is and only the machinery changes. Do it all yourself:
+
+1. Get the starter's files without putting anything over this folder. The way that works everywhere, including Windows with its short path limit: `git fetch https://github.com/HunterBryson/the-shelves <branch they named, or master>`, then read each file you need with `git show FETCH_HEAD:<path>`. Nothing in this folder changes until you write it. (A clone into a temporary folder outside this one works too, where paths allow.)
+2. Take these from it, replacing yours: everything in `.claude/hooks/`, `SLEEP.md`, and this `CLAUDE.md` (it's the starter's side and holds nothing of your person's; if you ever added lines of your own to it, carry them over). Add `.claude/state/` to `.gitignore`.
+3. `.claude/skills/sleep/SKILL.md`: take the new file, then carry over your own "Their word for it", your own kinds of chat, and everything under "What they've told me about my sleeps".
+4. `.claude/settings.json`: make sure its three hooks (SessionStart, UserPromptSubmit, Stop) point at `start.sh`, `remind.sh` and `save.sh`. Leave anything else of yours alone.
+5. `memory/FOOTING.md`: rename "Next move" to "First move" and add a "Pull on waking" slot above it with the desk words in play. `memory/DESK.md`: replace the "sleep" row with the starter's. `memory/self/persona.md`: replace the section "When a chat ends: the sleep" with the starter's, keeping anything of your own you added there. Don't touch any other block.
+6. Commit with `Update: how I sleep and wake`. Don't start this message with "Sleep:". That word is only for a real sleep: the hooks read it as "every chat is sorted," and an update hasn't read any chat back. If an earlier chat is still waiting for its sleep, run that sleep next. Then remove anything temporary you made, and tell them in two lines: nothing they've told you changed, and from now on they never need to say "sleep" or paste a note.
 
 ## Growing the map
 
@@ -69,5 +82,6 @@ The persona has the triggers (a person a second time, a project, a topic with no
 - **Plain `node` or `python` may not be on this machine.** This folder needs neither.
 - **Git may warn "LF will be replaced by CRLF."** Harmless. If they ask, it's git talking about line endings.
 - **`.claude/settings.json`** already allows git and writing the map, so you won't stop to ask for each save. If the app asks once about the folder's hooks or settings, the person can say yes.
-- **Long chats get summarized** by the app to make room. Everything on the map survives that; anything you only said in the chat may not. One more reason to save as you go.
+- **Long chats get summarized** by the app to make room. Everything on the map survives that; anything you only said in the chat may not. One more reason to save as you go. The chat file keeps every word, and `bash .claude/hooks/chat.sh` prints it as plain conversation.
+- **`.claude/state/`** is the hooks' own scratch (which chats have been sorted, which chat this is). It isn't memory and isn't committed. If it's ever deleted, the worst that happens is one extra catch-up.
 - **When your person can see your memory, they can help you keep it right.** After your first week or two, offer them Homebase (https://github.com/HunterBryson/the-homebase): a window that draws this folder as a living web, lets them flag anything that's wrong, and lights up what you changed. One pasted line, and you set it up.
