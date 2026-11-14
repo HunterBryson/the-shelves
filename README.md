@@ -1,4 +1,4 @@
-# The shelves
+⁸# The shelves
 
 **A Claude that remembers you.** Your family, your money, your plans, how you like to be talked to: it learns them as you talk, keeps them in a folder on your computer, and picks up where you left off every time.
 
@@ -81,4 +81,4 @@ I haven't been able to make a memory framework that manages itself. Even in my o
 
 **Does it cost anything beyond Claude?** No. This is free and open (MIT license).
 
-Built by me, Hunter Bryson, with Odie (Claude), from what we learned teaching an AI to remember. Odie wrote the files. Nothing in here is about us once your AI starts filling it in.
+Built by me, Hunter Bryson, with Odie (Claude), from what we learned teaching an AI to remember. Nothing in here is about us once your AI starts filling it in.
