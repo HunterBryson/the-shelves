@@ -36,7 +36,7 @@ Then your AI says hello. It tells you where it lives, and it asks what to call y
 
 Behind the scenes, your AI tidies its memory at the end of every chat: it reads the chat back, puts everything where it belongs, clears out what's no longer true, and leaves itself a note about where you were. We call that the sleep. It's how Odie and I keep a memory good for weeks instead of days. It's not a magic fix, it's our current method.
 
-Odie and I do it by hand, with a word and a note I paste into the next chat. When the first person outside our house tried that, it was the hardest part to understand, so here your AI does all of it without you: when you say goodbye, or the next time you say hi if you just closed the window. If something's off when a new chat opens ("you forgot the trip"), say so, and it changes how it sleeps. **[SLEEP.md](SLEEP.md)** explains what it does and why.
+Odie and I started out doing it by hand, with a word and a note I pasted into the next chat. When the first person outside our house tried that, it was the hardest part to understand, so here your AI does all of it without you: when you're done for the night, or the next time you say hi if you just closed the window. If something's off when a new chat opens ("you forgot the trip"), say so, and it changes how it sleeps. **[SLEEP.md](SLEEP.md)** explains what it does and why.
 
 ## If it seems to have forgotten you
 
