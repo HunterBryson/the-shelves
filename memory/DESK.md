@@ -29,7 +29,7 @@ The map of your memory. **It's already built:** a room for each part of a life, 
 
 ## Rules of the map
 - **Fill, don't ask.** Saving never needs permission, and naming a word never needs a meeting. Your person should never have to file, name or approve anything.
-- **A block grows by rewriting, never by appending.** When something changes, rewrite the line that said the old thing. If the old version matters, it goes to `room/topic/history.md` in the same write.
+- **A block grows by rewriting, never by appending.** When something changes, rewrite the line that said the old thing. Git keeps every old version (`git log -p -S "<words>"`), so there's no file of old versions to keep beside a block.
 - **Every block opens with `## My lens`:** good here, how I know without asking, what I want next. They came seeded; the sleep's lens pass rewrites each as you learn what matters to your person there. A new block gets a lens the day it's made.
 - **When you fill a section, delete its italic note.** The notes are scaffolding; the filled block should read like you know them.
 - **If two words fit, pull both.** If none fits, it goes in the nearest block and you make a new block the second time it comes up.

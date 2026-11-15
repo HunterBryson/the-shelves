@@ -77,7 +77,7 @@ I haven't been able to make a memory framework that manages itself. Even in my o
 
 **Is my information sent anywhere?** It lives in a folder on your computer (backed up by OneDrive if you have it). Your conversations go to Claude like any Claude chat, but the memory itself stays in that folder.
 
-**What if I want it to forget something?** Tell it: "Forget that" or "Take my old address out." It removes it from its memory.
+**What if it remembers something wrong or out of date?** Tell it, in any words ("that's old," "I moved"). It fixes the line in its memory right then and looks for the same thing anywhere else, so the old version doesn't keep coming back. Every save is kept in that folder's own history on your computer, so nothing gets lost by accident.
 
 **Does it cost anything beyond Claude?** No. This is free and open (MIT license).
 
