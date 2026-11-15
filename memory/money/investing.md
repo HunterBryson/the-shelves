@@ -15,7 +15,7 @@
 *Their strategy in their words: how long they're holding, how much risk they're okay with, what they add and when.*
 
 ## Their decisions
-*What they've decided, by topic, in their words, with why. A trade is a fact with a date, so it keeps one. A decision that replaces an older one takes its place.*
+*Decisions that aren't already in The plan, in their words, with why. A decision that replaces an older one takes its place. A trade goes under its holding in Where it stands: the latest one, with its date. Older trades are in git.*
 
 ## Open
 *Questions they're thinking about, things to check, deadlines.*

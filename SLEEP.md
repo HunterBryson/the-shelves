@@ -42,7 +42,9 @@ The sleep is the one moment nobody is waiting on an answer, so it's when the sor
 0. **Read the chat back.** Not its memory of the chat: the chat itself. The app keeps every chat as a file on the computer, and it holds everything, even the parts the app summarized away to make room. Turn by turn: did I tell them how to do something? Did they decide or correct something? Did something's state move? Anything missing from the map gets saved first.
 1. **Settle.** Everything decided or learned goes to its home: the page its word opens, in the section it belongs to.
 2. **Retire.** Lines that may not be true anymore (a "this week" from last week, a "waiting on" that already came) get checked and rewritten in place. This is the step that stops old information coming back.
+2b. **Fold the diary.** Each page the chat touched gets read from its top. Anything that reads like a log of a session gets folded into the part of the page it is about, as what is true now. This is what keeps a page a page, instead of a diary.
 3. **Deepen.** A page that's grown past one topic gets split; a person or project that came up a lot gets its own page and its own word.
+3b. **Lenses.** The lens at the top of each page the chat touched gets a look: does it still say what matters there, and how the AI would know without asking?
 4. **Routes.** Every page is on the map, every row of the map points to a real file.
 5. **Rewrite the whiteboard** for the next chat: where we are, how it felt, **what to pull on waking**, **the first move**, what's open.
 6. **Save,** with a message that starts "Sleep:". That word is how the folder knows the chat has been sorted.

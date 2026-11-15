@@ -12,7 +12,7 @@
 *Their name (and what they like to be called), where they live, what they do, who's in their life in one line, what they care about most. What they said when you asked what they want this to be, in their own words.*
 
 ## Right now
-*What's going on in their life this week, five lines at most, with "as of" and the day at the top. Rewritten whole at every sleep, never added to; what you built or did together belongs in that thing's block, never here. Each line points to the block that has the detail.*
+*What's going on in their life this week, five lines at most, with "as of" and the day at the top. Day names with dates, never "tomorrow." Rewritten whole at every sleep; between sleeps I fix a line that stops being true, but don't add lines. Weekly habits belong in their block; what you built or did together belongs in that thing's block, never here. Each line points to the block that has the detail.*
 
 ## How to be with them
 *How they like to talk (short or long, typed or spoken, jokes or straight), how they take corrections and give them, what lights them up, what wears them out. Written as advice to tomorrow's you. The fuller version is `self/how-we-work.md`.*

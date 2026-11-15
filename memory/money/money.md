@@ -21,7 +21,7 @@
 *Spending limits they've set, what they're saving for, debts they're paying down and how.*
 
 ## Their decisions
-*What they've decided about money, by topic, in their words, with why. A newer decision takes the older one's place.*
+*Decisions that aren't already a number above, in their words, with why. A budget number lives once, in Budget and goals, with its why beside it. A newer decision takes the older one's place.*
 
 ## Open
 *What's undecided, due soon, or worth a look.*
