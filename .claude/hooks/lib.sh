@@ -39,3 +39,54 @@ their_messages() {
   tail -n "+$2" "$1" 2>/dev/null | grep -v '"isMeta":true' \
     | LC_ALL=C grep -c -E '"role":"user","content":("|\[\{"type":"text")'
 }
+
+# PIECES and PIECE_SIZE: a hook's output is cut off near 10,000 characters, so the blocks the footing
+# asks for travel in numbered pieces, one SessionStart hook each (settings.json runs pull.sh 1 to 6).
+PIECES=6
+PIECE_SIZE=9000
+
+# pull_words: the desk words in the footing's "Pull on waking" slot, one per line, lowercase.
+pull_words() {
+  grep -i -m1 '^\*\*Pull on waking:\*\*' memory/FOOTING.md 2>/dev/null \
+    | sed -E 's/^\*\*[^*]*\*\*[[:space:]]*//; s/[[:space:].]*$//' | tr ',' '\n' \
+    | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//' | tr 'A-Z' 'a-z' | grep -v '^$'
+}
+
+# block_for <word>: the block file a desk word opens, or nothing if the desk has no such row.
+block_for() {
+  local path
+  path=$(awk -F'|' -v w="$1" '{k=$2; gsub(/^[ \t]+|[ \t]+$/,"",k); if (tolower(k)==w) {print $4; exit}}' memory/DESK.md 2>/dev/null | grep -o '`[^`]*`' | head -1 | tr -d '`')
+  [ -z "$path" ] && return
+  [ -f "$path" ] || path="memory/$path"
+  echo "$path"
+}
+
+# is_first_chat: true only for a brain nobody has lived in yet (same test the start hook uses).
+is_first_chat() {
+  grep -q "first chat" memory/FOOTING.md 2>/dev/null || return 1
+  local lived; lived=$(git log --format=%H -- memory 2>/dev/null | wc -l)
+  [ "$lived" -le 2 ]
+}
+
+# pulled_text: every block the footing asks for, whole, one after another (the four boot files skipped,
+# since they load on their own).
+pulled_text() {
+  local w path
+  pull_words | while read -r w; do
+    path=$(block_for "$w")
+    [ -n "$path" ] && [ -f "$path" ] || continue
+    case "$path" in memory/FOOTING.md|memory/DESK.md|memory/human/human.md|memory/self/persona.md) continue;; esac
+    echo "===== \"$w\" ($path), whole ====="
+    cat "$path"
+    echo
+    echo "===== end of \"$w\" ====="
+    echo
+  done
+}
+
+# split_pulled 0: how many pieces the pulled blocks need (0 if none). split_pulled <n>: piece n, cut at line ends.
+split_pulled() {
+  pulled_text | awk -v size="$PIECE_SIZE" -v want="$1" '
+    { line=$0 "\n"; if (len > 0 && len + length(line) > size) { n++; len=0 } ; if (n+1 == want) printf "%s", line; len += length(line) }
+    END { if (want == 0) print (len > 0 || n > 0) ? n+1 : 0 }'
+}

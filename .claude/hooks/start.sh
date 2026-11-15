@@ -58,34 +58,26 @@ if [ "$first" = 0 ]; then
   done
 fi
 
-# What the last sleep said to pull on waking. Small blocks are printed here, so they're read no matter what.
-pull=$(grep -i -m1 '^\*\*Pull on waking:\*\*' memory/FOOTING.md 2>/dev/null | sed -E 's/^\*\*[^*]*\*\*[[:space:]]*//; s/[[:space:].]*$//')
+# What the last sleep said to pull on waking. The blocks themselves arrive whole, in numbered pieces, from
+# pull.sh (one hook per piece, because a single hook's output is cut off near 10,000 characters).
+pull=$(pull_words | paste -sd, - | sed 's/,/, /g')
 if [ -n "$pull" ] && [ "$first" = 0 ]; then
-  budget=3500; toread=""; inlined=""
-  IFS=',' read -ra words <<< "$pull"
-  for w in "${words[@]}"; do
-    w=$(printf '%s' "$w" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//' | tr 'A-Z' 'a-z')
-    [ -z "$w" ] && continue
-    path=$(awk -F'|' -v w="$w" '{k=$2; gsub(/^[ \t]+|[ \t]+$/,"",k); if (tolower(k)==w) {print $4; exit}}' memory/DESK.md 2>/dev/null | grep -o '`[^`]*`' | head -1 | tr -d '`')
-    if [ -z "$path" ]; then toread="$toread
-- \"$w\" (no desk row with that word: find its block yourself)"; continue; fi
-    [ -f "$path" ] || path="memory/$path"
-    case "$path" in memory/FOOTING.md|memory/DESK.md|memory/human/human.md|memory/self/persona.md) continue;; esac
-    [ -f "$path" ] || { toread="$toread
-- \"$w\": $path is on the desk but missing; fix the row"; continue; }
-    size=$(wc -c < "$path" | tr -d ' ')
-    if [ "$size" -le "$budget" ] && [ "$size" -le 3000 ]; then
-      budget=$((budget - size)); inlined="$inlined $w,"
-      echo; echo "===== \"$w\" ($path), in full ====="; cat "$path"; echo "===== end of \"$w\" ====="
-    else
-      toread="$toread
-- \"$w\": $path"
-    fi
-  done
+  missing=""; boot=""
+  while read -r w; do
+    path=$(block_for "$w")
+    if [ -z "$path" ]; then missing="$missing
+- \"$w\" (no desk row with that word: find its block yourself)"
+    elif [ ! -f "$path" ]; then missing="$missing
+- \"$w\": $path is on the desk but missing; fix the row"
+    else case "$path" in memory/FOOTING.md|memory/DESK.md|memory/human/human.md|memory/self/persona.md) boot="$boot, $w";; esac; fi
+  done < <(pull_words)
+  total=$(split_pulled 0)
   echo
   echo "Waking up: at your last sleep you asked to have these in front of you: $pull."
-  [ -n "$inlined" ] && echo "They're above, in full:${inlined%,}."
-  [ -n "$toread" ] && echo "These were too long to print here, so read each one in full before your first reply:$toread"
+  [ -n "$boot" ] && echo "Already loaded with you, so not repeated: ${boot#, }."
+  [ "$total" -gt 0 ] && echo "The rest arrive whole beside this note, in $total numbered piece(s) (\"Your pulled blocks: piece 1 of $total\"). Read every piece before your first reply."
+  [ "$total" -gt "$PIECES" ] && echo "They didn't all fit: everything after piece $PIECES is cut off. Read the rest of those blocks yourself, in full, before your first reply, and pull fewer words at your next sleep."
+  [ -n "$missing" ] && echo "Couldn't load:$missing"
   echo "Your person can't see any of this. A short first line saying what you pulled (\"Pulled money and the garden.\") is how they know what's in your head, and how they catch a wrong pull early. Then the footing's First move."
 fi
 
