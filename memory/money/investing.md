@@ -9,13 +9,13 @@
 - **What I want next.** What they're investing for, in their words.
 
 ## Where it stands
-*Dated: accounts (401k, IRA, Roth, brokerage), roughly what's in each, when you last knew.*
+*One line per account (401k, IRA, Roth, brokerage): roughly what's in it, and the day you last saw it. A new reading replaces the old one.*
 
 ## The plan
 *Their strategy in their words: how long they're holding, how much risk they're okay with, what they add and when.*
 
 ## Their decisions
-*Each buy, sell or change of plan, dated, with their reason.*
+*What they've decided, by topic, in their words, with why. A trade is a fact with a date, so it keeps one. A decision that replaces an older one takes its place.*
 
 ## Open
 *Questions they're thinking about, things to check, deadlines.*

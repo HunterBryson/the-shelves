@@ -12,7 +12,7 @@
 *One line per person: name, who they are to your person ("my wife, Sarah"), where they live, kids' ages. Fill as they come up.*
 
 ## What's going on with them
-*Dated lines about these people: news, worries, plans, health, wins. Newest first; drop what's done.*
+*Under each person: what's going on with them now (news, worries, plans, health, wins). Rewrite it as things move; what's done leaves.*
 
 ## Things to remember
 *What each person likes, gift ideas, what to ask about next time, topics to go gently on. Birthdays go in `plans/dates.md`.*

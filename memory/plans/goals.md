@@ -9,10 +9,10 @@
 - **What I want next.** The thing they'd do if they knew it would work.
 
 ## The big ones
-*Their biggest goals and dreams, in their words, with when they told you.*
+*Their biggest goals and dreams, in their words.*
 
 ## This year
 *What they want to get done this year.*
 
 ## Progress
-*Dated lines: steps taken, wins, setbacks.*
+*Under each goal: where it stands now and the next step. A win or a setback changes that line; the story of it goes in your story (persona, "Our story so far").*

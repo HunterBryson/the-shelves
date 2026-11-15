@@ -15,7 +15,7 @@
 *Boss, coworkers, clients they mention: name, role, what they're like to work with.*
 
 ## Right now
-*Dated: what's happening at work this week or month.*
+*What's happening at work now, a few lines, rewritten as it moves.*
 
 ## Where it's going
 *Career goals, what they'd change, raises, job searches, in their words.*

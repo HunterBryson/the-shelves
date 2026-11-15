@@ -18,4 +18,4 @@
 *Name, kind, age, vet, quirks.*
 
 ## Fix-its and chores
-*What needs doing, what's been done (dated), who they call for what.*
+*What needs doing, who they call for what. A job that's done leaves, unless it's worth knowing later (when the roof was replaced), as one line in the part of the house it's about.*

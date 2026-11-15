@@ -9,7 +9,7 @@
 - **What I want next.** What they're trying to take better care of.
 
 ## Where it stands
-*Dated: conditions, injuries, how they've been feeling lately.*
+*One line per condition or injury: where it stands now, with the latest reading and the day it was taken. A new reading replaces the old one.*
 
 ## Doctors and medications
 *Their doctors (name, what for), medications and supplements (name, what for, when they take it).*
@@ -18,4 +18,4 @@
 *Exercise, sleep, food, weight, quitting something: what they're doing and what they want.*
 
 ## Appointments
-*Upcoming ones go in `plans/dates.md`; what happened at past ones goes here, dated.*
+*Upcoming ones go in `plans/dates.md`. What a visit settled goes into the part above it's about (a new medicine, a new reading), and the visit leaves.*

@@ -15,4 +15,4 @@
 *Ideas they've mentioned but haven't started.*
 
 ## Done
-*Finished projects, one line each with the date. Keep their blocks as a record.*
+*Finished projects, one line each with when it finished. Their blocks stay as a record of what was made.*

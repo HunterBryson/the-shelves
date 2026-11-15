@@ -12,4 +12,4 @@
 *One line per person: name, how your person knows them, what they're like.*
 
 ## What's going on
-*Dated lines: plans together, news, favors owed, things to follow up on.*
+*Under each person: plans together, news, favors owed, what to follow up on. What's done leaves.*

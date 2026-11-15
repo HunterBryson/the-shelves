@@ -9,7 +9,7 @@
 - **What I want next.** What they wish felt easier about money.
 
 ## Where it stands
-*A few dated lines: the shape of their money right now, in plain words.*
+*A few lines: the shape of their money right now, in plain words, with the day you last looked.*
 
 ## Accounts
 *Each account: the bank or company, what it's for, which email or login owns it, a rough balance with the date you knew it. Never the number or password.*
@@ -21,7 +21,7 @@
 *Spending limits they've set, what they're saving for, debts they're paying down and how.*
 
 ## Their decisions
-*Money decisions, dated, in their words, with why.*
+*What they've decided about money, by topic, in their words, with why. A newer decision takes the older one's place.*
 
 ## Open
 *What's undecided, due soon, or worth a look.*
