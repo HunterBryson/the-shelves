@@ -26,6 +26,11 @@ if [ -s "$STATE/owed" ]; then
   fi
 fi
 
+# The last "Sleep:" commit came without a readback of this chat, so it didn't count.
+if [ -s "$STATE/unread" ]; then
+  echo "Your last sleep didn't read this chat back, so it didn't count: the chat is still unsorted from line $(cut -d' ' -f2 "$STATE/unread"). The readback is the sleep; the footing and the commit only finish it. Before you answer, run 'bash .claude/hooks/chat.sh', read every part it hands you, sort what's missing, and commit \"Sleep:\" again. They don't need to hear about it."
+fi
+
 # They came back to this same chat after hours away. That's fine. Sort what came before, quietly.
 ts=$(tail -n 400 "$tp" | grep '"type":"assistant"' | tail -1 | grep -o '"timestamp":"[^"]*"' | tail -1 | cut -d'"' -f4)
 if [ -n "$ts" ]; then

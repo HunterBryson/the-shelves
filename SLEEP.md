@@ -53,9 +53,9 @@ Three small scripts in `.claude/hooks/` run by themselves. They're plain text; y
 
 - **When a chat starts** (`start.sh`): tells the AI the date, puts the pages named in "Pull on waking" in front of it, and, if an earlier chat closed without a sleep, hands it what was said and tells it to catch up before it greets you.
 - **With each message you send** (`remind.sh`): reminds the AI to save as it goes, and tells it when you've been away for hours, when the chat has gotten long, and when it still owes a sleep.
-- **After each reply** (`save.sh`): saves the folder, and when a sleep has landed, marks every chat as sorted.
+- **After each reply** (`save.sh`): saves the folder, and when a sleep has landed, marks each chat as sorted only as far as the AI read it back. A "Sleep:" with no readback behind it moves nothing, and the reminder says so.
 
-`chat.sh` prints a chat file as plain conversation, so the AI can read it back without wading through its own tool output.
+`chat.sh` prints a chat file as plain conversation, so the AI can read it back without wading through its own tool output. A long readback comes in parts (the app only shows a preview of anything very long), and once every part is printed it leaves a receipt: that receipt is what makes a sleep count.
 
 ## Making it yours
 

@@ -34,6 +34,22 @@ mark_slept() {
   mv "$STATE/slept.tmp" "$STATE/slept"
 }
 
+# note_read <chat file> <last line>: the readback reached this line of that chat. Only chat.sh writes it,
+# once every part of a readback has been printed. A sleep moves a chat's mark only as far as this.
+note_read() {
+  local name; name=$(basename "$1")
+  mkdir -p "$STATE"
+  grep -v -F "$name " "$STATE/read" 2>/dev/null > "$STATE/read.tmp"
+  echo "$name $2 $(date +%s)" >> "$STATE/read.tmp"
+  mv "$STATE/read.tmp" "$STATE/read"
+}
+
+# read_lines <chat file name>: how far the last readback of that chat reached (0 = not read since the last sleep).
+read_lines() {
+  local n; n=$(grep -F "$1 " "$STATE/read" 2>/dev/null | tail -1 | cut -d' ' -f2)
+  echo "${n:-0}"
+}
+
 # their_messages <file> <from line>: how many messages the person typed from that line on.
 their_messages() {
   tail -n "+$2" "$1" 2>/dev/null | grep -v '"isMeta":true' \

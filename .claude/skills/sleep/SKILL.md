@@ -24,7 +24,7 @@ A sleep in the middle of a chat changes nothing they can see. You don't need a n
 
 Do them in order, quietly. Your person sees one line at most ("Saved and sorted."), and at a catch-up they see nothing but a greeting that knows where you were.
 
-0. **Read the chat back, every time, even a short chat.** Your context isn't the record; the chat file is. The app quietly summarizes long chats to make room, and from inside you can't tell what it dropped, so "I remember all of it" is exactly the feeling to distrust. At a catch-up, the chat-start hook has already printed the earlier chat for you. For this chat, `bash .claude/hooks/chat.sh` prints it as plain conversation since your last sleep, one line per message, like this:
+0. **Read the chat back, every time, even a short chat.** Your context isn't the record; the chat file is. The app quietly summarizes long chats to make room, and from inside you can't tell what it dropped, so "I remember all of it" is exactly the feeling to distrust. At a catch-up, the chat-start hook has already printed the earlier chat for you. For this chat, `bash .claude/hooks/chat.sh` prints it as plain conversation since your last sleep, one line per message. A long one comes in parts and tells you the command for the next; read every part. **The readback is the sleep:** only what you read back gets marked sorted, so a "Sleep:" commit without it moves nothing, and the next reminder tells you. Like this:
    ```
    [321] THEM: can you add the dentist on Thursday
    [324] YOU: Done, it's on your calendar for 2 PM.
