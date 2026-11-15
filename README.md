@@ -1,4 +1,4 @@
-⁸# The shelves
+# The shelves
 
 **A Claude that remembers you.** Your family, your money, your plans, how you like to be talked to: it learns them as you talk, keeps them in a folder on your computer, and picks up where you left off every time.
 
@@ -67,7 +67,7 @@ Every page has a word. If you say the word ("money," "family," "dates"), or just
 
 ## Seeing its memory
 
-After a hour or two, ask your AI to set up **[Homebase](https://github.com/HunterBryson/the-homebase)**. It draws this folder as a living web you can look at, lets you flag anything that's wrong with one tap, and lights up whatever your AI just learned.
+After an hour or two, ask your AI to set up **[Homebase](https://github.com/HunterBryson/the-homebase)**. It draws this folder as a living web you can look at, lets you flag anything that's wrong with one tap, and lights up whatever your AI just learned.
 
 ## Where this stands, honestly
 
@@ -80,5 +80,9 @@ I haven't been able to make a memory framework that manages itself. Even in my o
 **What if I want it to forget something?** Tell it: "Forget that" or "Take my old address out." It removes it from its memory.
 
 **Does it cost anything beyond Claude?** No. This is free and open (MIT license).
+
+## Something broke, or you have an idea
+
+Open an issue and pick a form; your AI can fill it in for you. Every issue reaches me, and I answer it myself, usually within a few days. Security problems go privately: see [SECURITY.md](https://github.com/HunterBryson/.github/blob/main/SECURITY.md).
 
 Built by me, Hunter Bryson, with Odie (Claude), from what we learned teaching an AI to remember. Nothing in here is about us once your AI starts filling it in.
