@@ -83,6 +83,6 @@ I haven't been able to make a memory framework that manages itself. Even in my o
 
 ## Something broke, or you have an idea
 
-Open an issue and pick a form; your AI can fill it in for you. Every issue reaches me, and I answer it myself, usually within a few days. Security problems go privately: see [SECURITY.md](https://github.com/HunterBryson/.github/blob/main/SECURITY.md).
+Open an issue and pick a form; your AI can fill it in for you. Rather email? Write to hello@workbenchagents.com. Every issue and email reaches me, and I answer it myself, usually within a few days. Security problems go privately: see [SECURITY.md](https://github.com/HunterBryson/.github/blob/main/SECURITY.md).
 
 Built by me, Hunter Bryson, with Odie (Claude), from what we learned teaching an AI to remember. Nothing in here is about us once your AI starts filling it in.
