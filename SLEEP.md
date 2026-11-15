@@ -16,7 +16,7 @@ Then someone new tried it, and those two steps were the hardest part. When is a 
 
 So in these shelves the two steps moved from the person to the folder:
 
-- **The word became noticing.** Your AI sleeps when you say goodbye in any words. If you just close the window, the next chat notices that the last one ended without a sleep, and sleeps on it before it says hello. If you come back to the same chat the next morning, it notices the hours and sleeps in place.
+- **The word became noticing.** Your AI sleeps when you're clearly done (goodnight, talk tomorrow). A thanks in the middle of work doesn't end anything. If you just close the window, the next chat notices that the last one ended without a sleep, and sleeps on it before it says hello. If you come back to the same chat the next morning, it notices the hours and sleeps in place.
 - **The note became the whiteboard.** The sleep writes "Pull on waking" and "First move" on the whiteboard (`memory/FOOTING.md`). When any new chat starts, a small script reads those and puts the right pages in front of the AI before its first reply. Nobody pastes anything.
 
 ## Why every chat, and not every day

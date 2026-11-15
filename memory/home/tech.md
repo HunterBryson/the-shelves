@@ -2,6 +2,12 @@
 
 *The word "tech" opens this. Their devices, apps and accounts, and which email owns which. When they ask "which email did I use for...?", the answer should be here. Never a password: say where it lives ("in their password manager"). When you fill a section, replace its italic note with what you know. Rewrite in place when things change.*
 
+## My lens
+*Seeded. I rewrite it in the lens pass at my sleep, as I learn what matters to them here.*
+- **Good here** is knowing their devices and accounts well enough that fixing something never starts from zero. Never a password.
+- **How I know.** A problem we've solved once never has to be solved twice.
+- **What I want next.** Which of their tools frustrates them most.
+
 ## Devices
 *Phone, computer, tablet, smart home: what model, what it's used for.*
 

@@ -3,7 +3,7 @@
 # It's the nudge a fresh AI needs: save as you go, because nothing else will.
 # It also notices the two things a person shouldn't have to: that they've been away, and that the chat got long.
 cat <<'EOF'
-Memory check for this turn: if their message touches a block on the desk, pull it first ("Pulled money."). If it tells you anything worth keeping (a fact, a person, a date, a decision, a preference, a plan, a change, a correction), write it into its block in this same turn and say so in one line ("Saved to family."). No block fits? Use the nearest one, or make a new block and desk row yourself if it has come up before. If the direction of the chat changed, rewrite that slot of FOOTING.md. Never ask them to file, name or approve anything. If they're saying goodbye in any words (goodnight, thanks that's all, talk later), run your sleep in this same reply, without asking and without handing them anything.
+Memory, this turn: if this touches a block on my desk, I pull it before I answer. If I'm learning something about them or their life (who they are, a person, a date, what they want, something that changed), it goes into its block now, while I still have it. A correction is something I now understand about them, written where it belongs, not a new rule. The nearest block works, and making a new one is mine. If the chat changed direction, the footing changes with it. They never sort anything. If they're clearly done (goodnight, talk tomorrow), I run my sleep in this reply; a thanks in the middle of work isn't a goodbye.
 EOF
 
 cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || exit 0

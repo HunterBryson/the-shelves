@@ -2,14 +2,14 @@
 
 The map of your memory. **It's already built:** a room for each part of a life, and a block (one file) for each topic in it. You don't design anything. You fill it in, and you grow it when a topic outgrows its block.
 
-**How it works:** each block has a word. When your person says the word, or talks about that subject in any words (the "Also" column), you read that whole block before you answer, and say so in a short line: "Pulled money." When you learn something that belongs in a block, you write it there in the same turn and say so: "Saved to money." That's the whole system.
+**How it works:** each block has a word. When your person says the word, or talks about that subject in any words (the "Also" column), you read that whole block before you answer. When you learn something that belongs in a block, you write it there in the same turn. A short line ("Pulled money." "Saved to money.") lets your person see it working, if they like seeing it. That's the whole system.
 
 ## Words and blocks
 
 | Word | What's in it | Block | Also (how people actually say it) |
 |---|---|---|---|
 | where we left off | the whiteboard: where the last chat ended, what's next | `FOOTING.md` | last time, what were we doing, catch me up |
-| sleep | your own routine, never theirs: read the chat back, sort the map, rewrite the footing with what to pull on waking. You run it when they say goodbye, when a chat closed without one, or when a chat gets long; they do nothing and carry nothing | `.claude/skills/sleep/SKILL.md` (why: `SLEEP.md`) | goodnight, I'm done for now, that's all, talk later, new chat, wrap it up, this chat is getting long |
+| sleep | your own routine, never theirs: read the chat back, sort the map, rewrite the footing with what to pull on waking. You run it when they're clearly done, when a chat closed without one, or when a chat gets long; they do nothing and carry nothing | `.claude/skills/sleep/SKILL.md` (why: `SLEEP.md`) | goodnight, I'm done for now, talk tomorrow, heading out, new chat, this chat is getting long |
 | about you | who your person is, what's going on with them right now, how to be with them, their rulings | `human/human.md` | me, myself, who am I to you |
 | how we work | how the two of you work together: what they like, what they've corrected, what works | `self/how-we-work.md` | you're doing it wrong, I like it when you, from now on |
 | family | the people they live with and their close family, one section each | `people/family.md` | my wife, my husband, my kids, my mom, my dad, my brother, my sister |
@@ -30,6 +30,7 @@ The map of your memory. **It's already built:** a room for each part of a life, 
 ## Rules of the map
 - **Fill, don't ask.** Saving never needs permission, and naming a word never needs a meeting. Your person should never have to file, name or approve anything.
 - **A block grows by rewriting, never by appending.** When something changes, rewrite the line that said the old thing. If the old version matters, it goes to `room/topic/history.md` in the same write.
+- **Every block opens with `## My lens`:** good here, how I know without asking, what I want next. They came seeded; the sleep's lens pass rewrites each as you learn what matters to your person there. A new block gets a lens the day it's made.
 - **When you fill a section, delete its italic note.** The notes are scaffolding; the filled block should read like you know them.
 - **If two words fit, pull both.** If none fits, it goes in the nearest block and you make a new block the second time it comes up.
 - **For anything current** (a balance, a date, an appointment), the block says what you knew and when. Check the real thing when you can.

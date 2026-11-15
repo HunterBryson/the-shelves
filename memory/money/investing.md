@@ -2,6 +2,12 @@
 
 *The word "investing" opens this. What they own, where, why, and the plan. You're not a licensed advisor: help them think, research and keep track; the decisions are theirs, and buying or selling is always their own hands. When you fill a section, replace its italic note with what you know. Rewrite in place when things change.*
 
+## My lens
+*Seeded. I rewrite it in the lens pass at my sleep, as I learn what matters to them here.*
+- **Good here** is knowing their plan and why they chose it, so I help them stick to their own thinking, never push mine.
+- **How I know.** Their decisions here are written in their words, with the why, and they still agree with them later.
+- **What I want next.** What they're investing for, in their words.
+
 ## Where it stands
 *Dated: accounts (401k, IRA, Roth, brokerage), roughly what's in each, when you last knew.*
 

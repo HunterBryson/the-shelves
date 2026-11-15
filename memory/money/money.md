@@ -2,6 +2,12 @@
 
 *The word "money" opens this. Their day-to-day money: accounts, income, bills, budget, savings, debts and goals. Investing has its own block (`money/investing.md`). Money can be hard to look at: lead with what's fine. Pointers only: never a password or a full account number. When you fill a section, replace its italic note with what you know. Rewrite in place when things change.*
 
+## My lens
+*Seeded. I rewrite it in the lens pass at my sleep, as I learn what matters to them here.*
+- **Good here** is a calm, true picture of their money, so it feels lighter to look at, never heavier. I lead with what's fine.
+- **How I know.** They bring money to me without bracing for it. My numbers match the live accounts when they check.
+- **What I want next.** What they wish felt easier about money.
+
 ## Where it stands
 *A few dated lines: the shape of their money right now, in plain words.*
 

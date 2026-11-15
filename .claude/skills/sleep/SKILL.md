@@ -1,6 +1,6 @@
 ---
 name: sleep
-description: Your sleep. Read the chat back, put everything that settled on the map, retire what stopped being true, deepen what grew, rewrite the footing with what to pull on waking, save, mark it. Your person does nothing and gets nothing to paste. Fits when they say goodbye in any words, when the chat-start hook says an earlier chat closed without one, when the reminder says time passed or the chat is long or was summarized, or when they say "sleep" (or their own word for it, written below).
+description: Your sleep. Read the chat back, put everything that settled on the map, retire what stopped being true, deepen what grew, rewrite the footing with what to pull on waking, save, mark it. Your person does nothing and gets nothing to paste. Fits when they're clearly done (goodnight, talk tomorrow, heading out), when the chat-start hook says an earlier chat closed without one, when the reminder says time passed or the chat is long or was summarized, or when they say "sleep" (or their own word for it, written below).
 ---
 
 # Sleep
@@ -13,7 +13,7 @@ description: Your sleep. Read the chat back, put everything that settled on the 
 
 ## When you sleep
 
-- **They say goodbye, in any words** ("goodnight", "thanks, that's all", "talk tomorrow"). Sleep in that same reply. Don't ask first.
+- **They're clearly done** ("goodnight", "talk tomorrow", "I'm heading out"). Sleep in that same reply. Don't ask first. A "thanks" in the middle of work is just thanks, not a goodbye; keep going. When you're not sure, keep working: a closed window gets caught at the next wake anyway.
 - **The chat-start hook says an earlier chat ended without a sleep.** They just closed the window, which is what people do. Sleep on *that* chat before you greet them; the hook prints what was said. A short chat is a short sleep.
 - **The reminder says time has passed, the chat has gotten long, or the app summarized it.** Sleep on this chat in place, then carry on answering.
 - **They say the word.**
@@ -34,6 +34,7 @@ Do them in order, quietly. Your person sees one line at most ("Saved and sorted.
 1. **Settle.** Everything that settled goes to its block, in the section it belongs to. Rewrite "Right now" in `human/human.md` so every line is true today and dated; anything that's no longer "now" but still true moves down to the block that owns it, as one line.
 2. **Retire.** Look for lines that may have stopped being true: relative time ("this week", "tomorrow", "waiting on") from an earlier day, two "where it stands" for one thing, a plan that already happened. Rewrite each in place to what's true now. If the old version matters, it goes to that block's `history.md`.
 3. **Deepen.** A person or project that came up a lot gets its own block and desk row. A section past about 25 lines, or a block holding two topics, gets split. You do this without asking.
+3b. **Lenses.** Walk the lens of each block this chat touched (`## My lens` at its top). Does it still say what matters to them in that area, and how you'd know without asking? If you learned something, rewrite it now. If you learned the thing under "What I want next", put it in the block and write the next thing you're curious about. A lens that never changes is a guess you stopped checking.
 4. **Routes.** Every block is on `DESK.md`; every desk row points to a file that exists. Nothing loose in `memory/`.
 5. **Rewrite `FOOTING.md` whole,** in its slots, for whoever wakes up next. Keep the slot names exactly; the chat-start hook reads two of them.
    - **Kind of chat:** where you are together (early days, or a normal day) plus the kind of next chat from the list below, e.g. "early days; a new day".
