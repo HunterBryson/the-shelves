@@ -3,10 +3,10 @@
     "allow": [
       "Bash(git:*)",
       "Bash(winget install:*)",
-      "Read(memory/**)",
-      "Edit(memory/**)",
-      "Read(imports/**)",
-      "Edit(imports/**)"
+      "Bash(bash .claude/hooks/*)",
+      "Read(**)",
+      "Edit(**)",
+      "Write(**)"
     ]
   },
   "hooks": {
