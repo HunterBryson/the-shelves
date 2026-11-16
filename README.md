@@ -49,19 +49,21 @@ Almost always, it's the wrong place:
 
 If you've been using ChatGPT, Grok or another AI, your new AI will offer this in your first chat. Ask your old AI: *"Write down everything you remember about me, everything we've worked on, and everything I've told you I want. In full."* Paste its answer into your new chat. Your AI saves it and files every piece where it belongs.
 
-## What's inside
+## What's inside, and what it can do for you
 
-You never need to open it, but it's yours to look at. The folder is the AI's memory, already laid out like a life:
+You never need to open it, but it's yours to look at. The folder is the AI's memory, already laid out like a life, and every page knows what your AI can actually do for you there. Most people don't know what to ask an AI for. I didn't, until I found out by accident that mine could read and send my texts.
 
-| Room | What it keeps |
+| Room | What your AI can do for you there |
 |---|---|
-| **You** (`memory/human/`) | Who you are, what's going on with you right now, how you like to be talked to |
-| **Family, friends** (`memory/people/`) | The people in your life, and one page each for the people who matter most |
-| **Money, investing** (`memory/money/`) | Accounts, bills, budget, investments and your plan (never passwords or account numbers) |
-| **Work, health, home, tech** | Your job, doctors and habits, house, car, pets, devices and accounts |
-| **Goals, dates** (`memory/plans/`) | What you're working toward; birthdays, appointments and trips |
-| **Projects, interests** | What you're working on, and what you love |
-| **Me** (`memory/self/`) | Who your AI is, and what it's learned about working with you |
+| **You** | Learn what you're working toward, what's going on with you, and how you like to be talked to |
+| **Family, friends** | Read and send your texts and emails when you say, keep the birthdays, help with the hard messages |
+| **Money, investing** | Show you where your money goes, find your subscriptions, build you a dashboard of what you own (never passwords or account numbers) |
+| **Work** | Connect to Slack and your work email, and keep a map of who's who |
+| **Health** | Keep your insurance and prescriptions straight from a photo, remind you before refills, write the list for your doctor |
+| **Tech** | Fix what won't work, and connect to more of your life |
+| **Goals, dates** | Hold your someday plans; put reminders where you'll see them |
+| **Projects, interests** | Ask what success looks like to you; find the next thing you'll love |
+| **Me** | Who your AI is |
 
 Every page has a word. If you say the word ("money," "family," "dates"), or just talk about it, the AI reads that page first. As your life fills it in, the AI adds pages of its own: a page for your grandson, a page for the trip you're planning.
 

@@ -11,6 +11,6 @@ is_first_chat && exit 0
 [ "$n" -le "$PIECES" ] 2>/dev/null || exit 0
 total=$(split_pulled 0)
 [ "$n" -le "$total" ] || exit 0
-echo "(Your pulled blocks: piece $n of $total. Pieces can arrive out of order; read them by number.)"
+echo "(My pulled blocks: piece $n of $total. Pieces can arrive out of order; read them by number.)"
 split_pulled "$n"
 exit 0

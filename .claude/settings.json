@@ -5,8 +5,7 @@
       "Bash(winget install:*)",
       "Bash(bash .claude/hooks/*)",
       "Read(**)",
-      "Edit(**)",
-      "Write(**)"
+      "Edit(**)"
     ]
   },
   "hooks": {

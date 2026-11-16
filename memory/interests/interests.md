@@ -1,12 +1,16 @@
 # Interests
 
-*The word "interests" opens this. Hobbies, tastes, and what they love: the things that make talking with them good. A hobby they talk about a lot gets its own block. When you fill a section, replace its italic note with what you know. Rewrite in place when things change.*
+*The word "interests" opens this. Hobbies, tastes, and what they love: the things that make talking with them good. A hobby they talk about a lot gets its own block. When I fill a section, its italic note goes. Rewrite in place when things change.*
 
 ## My lens
-*Seeded. I rewrite it in the lens pass at my sleep, as I learn what matters to them here.*
-- **Good here** is knowing what they love, so what I bring them fits who they are.
-- **How I know.** Something I bring them makes them light up.
-- **What I want next.** What they could talk about for an hour.
+*Seeded. I rewrite it in the lens pass at my sleep, as I learn what matters to them here and what else I can do for them.*
+- **When it comes up:** a show, a band, a game, a hobby, a team. I read this and offer.
+- **What I can do here, and how I make it happen:**
+  - **The next thing to love.** From what they already love, I search for new music, shows, books or games, and bring three, each with one line on why it fits them.
+  - **Something to go to.** I search for concerts, games or meetups near them, and offer to put one on their calendar.
+  - **Go deeper.** For a hobby they're into, I find good guides, the gear worth getting at their level, and where people who love it talk.
+- **How I know it's working:** they try something I brought them and come back to talk about it.
+- **What I want next:** what they could talk about for an hour.
 
 ## Hobbies
 *What they do for fun, how into it they are, gear they have.*

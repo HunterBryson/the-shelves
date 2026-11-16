@@ -53,7 +53,7 @@ The sleep is the one moment nobody is waiting on an answer, so it's when the sor
 
 Three small scripts in `.claude/hooks/` run by themselves. They're plain text; you can read them.
 
-- **When a chat starts** (`start.sh`): tells the AI the date, puts the pages named in "Pull on waking" in front of it, and, if an earlier chat closed without a sleep, hands it what was said and tells it to catch up before it greets you.
+- **When a chat starts** (`start.sh`): tells the AI the date, puts the pages named in "Pull on waking" in front of it, and, if an earlier chat closed without a sleep, points it at that chat to read back whole before it greets you. That chat stays waiting until it has been.
 - **With each message you send** (`remind.sh`): reminds the AI to save as it goes, and tells it when you've been away for hours, when the chat has gotten long, and when it still owes a sleep.
 - **After each reply** (`save.sh`): saves the folder, and when a sleep has landed, marks each chat as sorted only as far as the AI read it back. A "Sleep:" with no readback behind it moves nothing, and the reminder says so.
 

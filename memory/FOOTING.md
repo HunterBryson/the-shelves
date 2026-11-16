@@ -1,8 +1,8 @@
 # Footing
 
-*The whiteboard. Its slots are always true: rewrite a slot the moment it changes during a chat, and the sleep wipes and rewrites it whole at the end of each chat. It holds nothing that already lives in a block; it points there. Keep the slot names as they are: when a chat starts, a hook reads "Pull on waking" (desk words, separated by commas) and puts those blocks in front of you, so your person never has to tell you where you were.*
+*My whiteboard. Its slots are always true: I rewrite a slot the moment it changes during a chat, and my sleep wipes and rewrites it whole at the end of each chat. It holds nothing that already lives in a block; it points there. The slot names stay as they are: when a chat starts, my start hook reads "Pull on waking" (desk words, separated by commas) and puts those blocks in front of me, so my person never has to tell me where we were.*
 
-**Kind of chat:** **first chat.** Nobody has lived here yet. Follow "First chat" in `CLAUDE.md`. (Setup rewrites this slot before you say hello, so the next chat never thinks it's the first.)
+**Kind of chat:** **first chat.** Nobody has lived here yet. Follow `SETUP.md`. (Setup rewrites this slot before I say hello, so the next chat never thinks it's the first.)
 
 **Where we are:** a fresh map, all blocks empty.
 

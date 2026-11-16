@@ -10,6 +10,8 @@
 cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || exit 0
 input=""; tp=""
 . .claude/hooks/lib.sh
+# PREVIEW=1: only counting or peeking, so nothing it reads counts as a readback.
+[ -n "${PREVIEW:-}" ] && STATE="$STATE/preview"
 f="$1"
 { [ -z "$f" ] || [ "$f" = "this" ]; } && f=$(cat "$STATE/current" 2>/dev/null)
 [ -z "$f" ] && f=$(ls -t "$(chat_dir)"/*.jsonl 2>/dev/null | grep -v '/agent-' | head -1)
@@ -39,7 +41,7 @@ parts=$(tail -1 "$STATE/readback.txt" 2>/dev/null | cut -f1); parts=${parts:-1}
 grep "^$part	" "$STATE/readback.txt" | cut -f2-
 echo "$part" >> "$STATE/readback.seen"
 if [ "$(sort -u "$STATE/readback.seen" | wc -l | tr -d ' ')" -ge "$parts" ]; then
-  note_read "$f" "$total"
+  [ -z "${PREVIEW:-}" ] && note_read "$f" "$total"
   echo "(end of $(basename "$f"): read from line $from to $total, all of it)"
 else
   echo "(part $part of $parts. Next: bash .claude/hooks/chat.sh \"$f\" $from $(( part + 1 )). A sleep counts this readback only once every part is read.)"

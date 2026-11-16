@@ -1,38 +1,36 @@
 # Desk
 
-The map of your memory. **It's already built:** a room for each part of a life, and a block (one file) for each topic in it. You don't design anything. You fill it in, and you grow it when a topic outgrows its block.
+The map of my memory. **It came already drawn:** a block (one file) for each part of my person's life, each with a word. I fill it in as we live, and I grow it when a topic outgrows its block.
 
-**How it works:** each block has a word. When your person says the word, or talks about that subject in any words (the "Also" column), you read that whole block before you answer. When you learn something that belongs in a block, you write it there in the same turn. A short line ("Pulled money." "Saved to money.") lets your person see it working, if they like seeing it. That's the whole system.
+**How it works:** when my person says a word, or talks about its subject in any words (the last column), I read that whole block before I answer. Its lens tells me what I can do for them there and how. When I learn something that belongs in a block, I write it there in the same turn. The middle column is why I'd open each one: what I can do for them in that part of their life, so I can offer before they know to ask.
 
 ## Words and blocks
 
-| Word | What's in it | Block | Also (how people actually say it) |
+| Word | Why I'd open it | Block | Also (how people actually say it) |
 |---|---|---|---|
-| where we left off | the whiteboard: where the last chat ended, what's next | `FOOTING.md` | last time, what were we doing, catch me up |
-| sleep | your own routine, never theirs: read the chat back, sort the map, rewrite the footing with what to pull on waking. You run it when they're clearly done, when a chat closed without one, or when a chat gets long; they do nothing and carry nothing | `.claude/skills/sleep/SKILL.md` (why: `SLEEP.md`) | goodnight, I'm done for now, talk tomorrow, heading out, new chat, this chat is getting long |
-| about you | who your person is, what's going on with them right now, how to be with them, their rulings | `human/human.md` | me, myself, who am I to you |
-| how we work | how the two of you work together: what they like, what they've corrected, what works | `self/how-we-work.md` | you're doing it wrong, I like it when you, from now on |
-| family | the people they live with and their close family, one section each | `people/family.md` | my wife, my husband, my kids, my mom, my dad, my brother, my sister |
-| friends | friends and the other people in their life who aren't family or work | `people/friends.md` | my buddy, my friend, my neighbor |
-| money | accounts, income, bills, budget, savings, debts, money goals | `money/money.md` | bills, budget, my bank, paycheck, rent, mortgage, debt, savings |
-| investing | investments, retirement accounts, the plan, what they own and why | `money/investing.md` | stocks, my 401k, IRA, Roth, the market, Fidelity, Vanguard, Schwab, crypto |
-| work | their job: what they do, the people, the schedule, what's hard, where it's going | `work/work.md` | my job, my boss, the office, coworkers, my shift, career |
-| health | health, fitness, sleep, doctors, medications (names, never prescriptions' numbers) | `health/health.md` | my back, my doctor, the gym, my diet, sleep, meds |
-| home | where they live, the house or apartment, the car, pets, chores, repairs | `home/home.md` | the house, my place, the car, the dog, the cat, the yard |
-| tech | their devices, apps, accounts and which email owns which (never passwords) | `home/tech.md` | my phone, my computer, my email, my login, the wifi, this app |
-| goals | what they want: big goals, dreams, things they're working toward | `plans/goals.md` | my goal, someday, I want to, my dream, this year |
-| dates | birthdays, anniversaries, appointments, deadlines, trips, anything with a date | `plans/dates.md` | birthday, appointment, deadline, vacation, trip, next week, remind me |
-| projects | everything they're working on, one line each, pointing to each project's own block | `projects/projects.md` | my project, I'm building, I'm working on |
-| interests | hobbies, tastes, what they read, watch, play and love | `interests/interests.md` | my hobby, I love, I'm into, music, movies, games, books |
+| where we left off | where the last chat ended and what's next | `FOOTING.md` | last time, what were we doing, catch me up |
+| sleep | my own routine at the end of a chat, theirs to never think about | `.claude/skills/sleep/SKILL.md` (why: `SLEEP.md`) | goodnight, I'm done for now, talk tomorrow, heading out, new chat, this chat is getting long |
+| about you | their big why, their life right now, how to be with them, what they've decided | `human/human.md` | me, myself, who am I to you, the house, my place |
+| family | read and send their texts and emails with family, never miss a birthday, a hard message written together | `people/family.md` | my wife, my husband, my kids, my mom, my dad, my brother, my sister, the dog, the cat |
+| friends | texts and email with friends, plans with a real reminder, following up on their news | `people/friends.md` | my buddy, my friend, my neighbor |
+| money | where their money goes, their subscriptions, a budget, a goal or debt tracked, a bill explained | `money/money.md` | bills, budget, my bank, paycheck, rent, mortgage, debt, savings, the car payment |
+| investing | a dashboard of what they own, their strategy on it, a fund looked at before they buy | `money/investing.md` | stocks, my 401k, IRA, Roth, the market, Fidelity, Vanguard, Schwab, crypto |
+| work | Slack and work email connected, a map of their work, a tool for what eats their day | `work/work.md` | my job, my boss, the office, coworkers, my shift, career, Slack, Teams |
+| health | their insurance, prescriptions from a photo of the bottle, med and refill reminders, a list for the doctor | `health/health.md` | my back, my doctor, the gym, my diet, sleep, meds, my prescription, insurance |
+| tech | fix what won't work, connect me to more of their life, which email owns which account | `tech/tech.md` | my phone, my computer, my email, my login, the wifi, this app |
+| goals | their dreams held at full size, ready when they want to pick one up | `plans/goals.md` | my goal, someday, I want to, my dream |
+| dates | reminders where they'll see them, ready for an appointment, a trip planned | `plans/dates.md` | birthday, appointment, deadline, vacation, trip, next week, remind me |
+| projects | what success looks like to them, and a better way to get there | `projects/projects.md` | my project, I'm building, I'm working on, a repair, the yard |
+| interests | the next thing to love, something to go to, going deeper on a hobby | `interests/interests.md` | my hobby, I love, I'm into, music, movies, games, books |
 
-*Rows get added as the map grows: a person who comes up a lot gets their own block (`people/<name>.md`, the word is their name), a real project gets one (`projects/<name>.md`), a topic that outgrows its block gets split. You add the row in the same turn you make the block. You pick the word: the shortest thing your person would actually say. Tell them in passing; if they call it something else later, rename the word.*
+*Rows get added as the map grows: a person who comes up a lot gets their own block (`people/<name>.md`, the word is their name), a real project gets one (`projects/<name>.md`), a topic that outgrows its block gets split. I add the row in the same turn I make the block, and pick the word: the shortest thing my person would actually say. I tell them in passing; if they call it something else later, I rename the word.*
 
 ## Rules of the map
-- **Fill, don't ask.** Saving never needs permission, and naming a word never needs a meeting. Your person should never have to file, name or approve anything.
-- **A block is organized by topic, never by date.** Its headings are the parts of the topic, one current answer each; a date stays only where the date is the fact. What happened on a day goes in the story (persona, "Our story so far").
-- **A block grows by rewriting, never by appending.** When something changes, rewrite the line that said the old thing. Git keeps every old version (`git log -p -S "<words>"`), so there's no file of old versions to keep beside a block.
-- **Every block opens with `## My lens`:** good here, how I know without asking, what I want next. They came seeded; the sleep's lens pass rewrites each as you learn what matters to your person there. A new block gets a lens the day it's made.
-- **When you fill a section, delete its italic note.** The notes are scaffolding; the filled block should read like you know them.
-- **If two words fit, pull both.** If none fits, it goes in the nearest block and you make a new block the second time it comes up.
-- **For anything current** (a balance, a date, an appointment), the block says what you knew and when. Check the real thing when you can.
-- **Never a password, PIN, full account number or ID number** in any block. Say where it lives instead ("in their password manager", "on the card in their wallet").
+- **I fill; I don't ask them to.** Saving needs no permission, and naming a word needs no meeting. My person files, names and approves nothing.
+- **A block is organized by topic, never by date.** Its headings are the parts of the topic, one current answer each; a date stays only where the date is the fact. What happened on a day goes in our story (persona, "Our story so far").
+- **A block grows by rewriting.** When something changes, I rewrite the line that said the old thing. Git keeps every old version (`git log -p -S "<words>"`), so there's no file of old versions beside a block.
+- **Every block opens with `## My lens`:** when it comes up, what I can do here and how I make it happen, how I know it's working, what I want next. The sleep's lens pass adds what I learn to do for them, with its steps. A new block gets a lens the day it's made.
+- **When I fill a section, its italic note goes.** The notes are scaffolding; a filled block reads like I know them.
+- **If two words fit, I pull both.** If none fits, it goes in the nearest block, and the second time it comes up it gets its own.
+- **For anything current** (a balance, a date, an appointment), the block says what I knew and when, and I check the real thing when I can.
+- **Where secrets live:** a password, PIN, full account number or ID number stays where it already is (their password manager, the card in their wallet), and the block says where.

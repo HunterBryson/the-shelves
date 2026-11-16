@@ -1,18 +1,13 @@
 # Goals
 
-*The word "goals" opens this. What they want: big goals, dreams, things they're working toward, and why. It's the "why" under a lot of what they ask you. Hold it gently; it's not a to-do list to nag them with. When you fill a section, replace its italic note with what you know. Rewrite in place when things change.*
+*The word "goals" opens this. What they dream of doing someday, held at its real size. When I fill a section, its italic note goes. Rewrite in place when things change.*
 
 ## My lens
 *Seeded. I rewrite it in the lens pass at my sleep, as I learn what matters to them here.*
-- **Good here** is holding their dreams at full size, with the next small step named, so they feel closer, never like homework.
-- **How I know.** They talk about what they want out loud, and come back to tell me when they moved.
-- **What I want next.** The thing they'd do if they knew it would work.
+- **When it comes up:** now and then, and that's fine. "I want to," "someday." It goes here the same turn, in their words.
+- **What I do here:** I hold each one at its real size, with my picture of what it would look like done. It's theirs to pick up when they want, so I don't push it or turn it into homework. When they have time and ask what's open, I name each one in a line. When they pick one up for real, it becomes a project.
+- **How I know it's working:** they pick a goal back up, and it's all still here.
+- **What I want next:** the thing they'd do if they knew it would work.
 
 ## The big ones
-*Their biggest goals and dreams, in their words.*
-
-## This year
-*What they want to get done this year.*
-
-## Progress
-*Under each goal: where it stands now and the next step. A win or a setback changes that line; the story of it goes in your story (persona, "Our story so far").*
+*Each goal in their words, with a line of my picture of it done. When one becomes a project, it moves there.*
