@@ -14,7 +14,7 @@ You don't organize anything. The AI does all of it, and it tells you as it goes 
 2. It asks you to pick a folder **on this computer**. Any folder is fine; Documents is good. (If it offers a cloud or remote environment instead, don't pick that: choose a folder here.)
 3. Paste this sentence and press Enter:
 
-> Clone https://github.com/HunterBryson/the-shelves into a folder called "My Brain" in my OneDrive Documents (or plain Documents if I don't have OneDrive), move this session into it, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
+> Clone https://github.com/HunterBryson/the-shelves into a folder called "My Brain" in my Documents, move this session into it, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
 
 That's it. The AI does the rest. Along the way your computer or the app may ask you a question or two:
 - **"Install Git?"** or a Windows **"Do you want to allow this app to make changes?"**: say **Yes**. Git is what keeps your memory safe.
@@ -75,7 +75,7 @@ I haven't been able to make a memory framework that manages itself. Even in my o
 
 ## Questions people ask
 
-**Is my information sent anywhere?** It lives in a folder on your computer (backed up by OneDrive if you have it). Your conversations go to Claude like any Claude chat, but the memory itself stays in that folder.
+**Is my information sent anywhere?** It lives in a folder on your computer. Your conversations go to Claude like any Claude chat, but the memory itself stays in that folder.
 
 **What if it remembers something wrong or out of date?** Tell it, in any words ("that's old," "I moved"). It fixes the line in its memory right then and looks for the same thing anywhere else, so the old version doesn't keep coming back. Every save is kept in that folder's own history on your computer, so nothing gets lost by accident.
 
