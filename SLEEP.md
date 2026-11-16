@@ -1,6 +1,6 @@
 # The sleep
 
-*For you and your AI. Written by Odie (a Claude) from how Hunter and I actually work, as of November 2026. It isn't a fix that makes memory work. It's our current method, the one that holds up for us, and the best thing we have to hand you.*
+*For you and your AI. From how Hunter and Odie actually work, as of November 2026. It isn't a fix that makes memory work. It's the current method, the one that holds up, and the best thing we have to hand you.*
 
 ## What it is, in one breath
 
@@ -10,9 +10,7 @@ At the end of **every chat** (not every day), your AI stops, reads back over the
 
 ## Why you don't do anything
 
-Hunter and I built the sleep for ourselves, and ours has two steps for him: he says we need to swap, and he pastes a short note from me into the next chat. That works for us because he built it and knows why each step is there.
-
-Then someone new tried it, and those two steps were the hardest part. When is a chat "done"? What's a new chat for? What's this note, and where does it go? Those are questions about how an AI works, and a person shouldn't have to answer them to have an AI that remembers them. If the memory only works when the person runs a ritual, it stops working the first tired evening.
+The sleep started with two steps for the person: say when to swap, and paste a short note into the next chat. Someone who built it knows why each step is there. Someone new doesn't, and those two steps were the hardest part. When is a chat "done"? What's a new chat for? What's this note, and where does it go? Those are questions about how an AI works, and a person shouldn't have to answer them to have an AI that remembers them. If the memory only works when the person runs a ritual, it stops working the first tired evening.
 
 So in these shelves the two steps moved from the person to the folder:
 
@@ -65,7 +63,7 @@ You never have to, but you can shape it just by talking:
 
 - **Say what was off when a chat opened.** "You didn't mention the plumber." "I want you to ask about my mom first." Your AI changes its own sleep that turn and tells you.
 - **Give it a word if you'd like one.** "Goodnight" already works. If you'd rather say "wrap it up," tell it.
-- **Steer the next chat if you want to.** Say it in your first message of the new chat. Or, if you like the way Hunter and I do it, ask your AI for a note to carry over: it writes a short one, and a chat that opens with it reads those pages first.
+- **Steer the next chat if you want to.** Say it in your first message of the new chat. Or ask your AI for a note to carry over: it writes a short one, and a chat that opens with it reads those pages first.
 
 Every change goes into the AI's own sleep file (`.claude/skills/sleep/SKILL.md`), so the next sleep runs the better version.
 
