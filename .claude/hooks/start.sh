@@ -37,22 +37,29 @@ fi
 # An earlier chat that ended without a sleep: they closed the window, which is what people do.
 if [ "$first" = 0 ]; then
   dir=$(chat_dir); cur=$(basename "${tp:-none}")
-  for prev in $(ls -t "$dir"/*.jsonl 2>/dev/null | grep -v '/agent-' | grep -v -F "/$cur" | head -3 | tr ' ' '?'); do
-    [ -f "$prev" ] || continue
-    from=$(( $(slept_lines "$(basename "$prev")") + 1 ))
-    n=$(their_messages "$prev" "$from")
-    if [ "${n:-0}" -gt 0 ]; then
+  # Every earlier chat, newest first, not only the newest three: four quick chats closed without a sleep used to
+  # leave the oldest unsorted forever. Up to 10 are handed over per wake; any beyond that are counted, and come
+  # at the next wake. owed_scan (lib.sh) reads them all in one pass, so this stays well inside the hook's 10 seconds.
+  handed=0; waiting=0; chats=()
+  while IFS= read -r f; do chats+=("$f"); done < <(ls -t "$dir"/*.jsonl 2>/dev/null | grep -v '/agent-' | grep -v -F "/$cur")
+  while read -r n name; do
+    [ "${n:-0}" -gt 0 ] || continue
+    if [ "$handed" -ge 10 ]; then waiting=$((waiting + 1)); continue; fi
+    handed=$((handed + 1))
+    prev="$dir/$name"
+    from=$(( $(slept_lines "$name") + 1 ))
+    if true; then
       total=$(wc -l < "$prev" | tr -d ' ')
-      parts=$(PREVIEW=1 bash .claude/hooks/chat.sh "$prev" "$from" | grep -o 'part 1 of [0-9]*' | grep -o '[0-9]*$'); parts=${parts:-1}
       echo
       echo "An earlier chat ended without a sleep: $n of their messages since I last sorted my memory. That's normal: people close the window, and sometimes a chat is still open somewhere else. I saved as I went, so nothing is lost, but nobody has stepped back to tidy, and the footing may describe a moment that has passed. Before I greet them, I read it back whole and run my sleep on it (.claude/skills/sleep/SKILL.md), so my hello comes from what actually happened."
-      echo "Read it with: bash .claude/hooks/chat.sh \"$prev\" $from   ($parts part(s); each part names the command for the next). Only a readback of every part counts: the sleep marks this chat sorted as far as I read it."
+      echo "Read it with: bash .claude/hooks/chat.sh \"$prev\" $from   (a long one comes in parts, and each part names the command for the next). Only a readback of every part counts: the sleep marks this chat sorted as far as I read it."
       echo "A short chat is a short sleep. They don't need to hear about any of this; what they should feel is a hello that knows where we were."
       # Not marked sorted here. It stays owed until a readback reaches its end and a "Sleep:" commit lands (slept.sh moves the mark).
       grep -v -F "$(basename "$prev") " "$STATE/owed" 2>/dev/null > "$STATE/owed.tmp"
       echo "$(basename "$prev") $total $from $prev" >> "$STATE/owed.tmp"; mv "$STATE/owed.tmp" "$STATE/owed"
     fi
-  done
+  done < <(owed_scan "${chats[@]}")
+  [ "$waiting" -gt 0 ] && echo && echo "$waiting more earlier chat(s) also ended without a sleep. After these $handed, they're handed over at my next wake; none of them is lost."
 fi
 
 # What the last sleep said to pull on waking. The blocks themselves arrive whole, in numbered pieces, from

@@ -8,8 +8,8 @@ if ! git diff --cached --quiet 2>/dev/null; then
   git -c user.name="${GIT_AUTHOR_NAME:-$(git config user.name || echo Claude)}" -c user.email="$(git config user.email || echo claude@shelves.local)" \
     commit -q -m "Saved ${changed:-memory}" >/dev/null 2>&1
 fi
-# A sleep just landed (a commit whose message starts "Sleep:"): mark every chat as sorted up to here,
-# so the next chat knows there's nothing to catch up on.
+# A sleep just landed (a commit whose message starts "Sleep:"): slept.sh moves each chat's mark only as far
+# as its readback reached, so a sleep that skipped the readback can't hide that stretch from the next one.
 sleep_now=$(git log -1 --format=%H --grep='^Sleep:' 2>/dev/null)
 if [ -n "$sleep_now" ] && [ "$sleep_now" != "$(cat .claude/state/lastsleep 2>/dev/null)" ]; then
   mkdir -p .claude/state

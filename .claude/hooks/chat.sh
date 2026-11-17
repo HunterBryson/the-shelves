@@ -29,9 +29,10 @@ if [ "$part" = 1 ] || [ "$(head -1 "$STATE/readback.key" 2>/dev/null)" != "$key"
   LC_ALL=C awk -v s="$from" 'NR>=s && !/"isMeta":true/ && !/"isCompactSummary":true/ {print NR "\t" $0}' "$f" \
     | LC_ALL=C sed -n -E \
       -e "/\"type\":\"user\"/{ s/^([0-9]+)\t.*\"role\":\"user\",\"content\":$str.*/[\1] THEM: \2/p; t" \
-      -e "s/^([0-9]+)\t.*\"role\":\"user\",\"content\":\[\{\"type\":\"text\",\"text\":$str.*/[\1] THEM: \2/p; }" \
+      -e "s/^([0-9]+)\t.*\"role\":\"user\",\"content\":\[\{\"type\":\"text\",\"text\":$str.*/[\1] THEM: \2/p; t" \
+      -e "s/^([0-9]+)\t.*\"role\":\"user\",\"content\":\[(\{\"type\":\"image\",\"source\":\{[^}]*\}\},)+\{\"type\":\"text\",\"text\":$str.*/[\1] THEM: [picture] \3/p; }" \
       -e "/\"type\":\"assistant\"/ s/^([0-9]+)\t.*\"type\":\"text\",\"text\":$str.*/[\1] YOU: \2/p" \
-    | cut -c1-3000 \
+    | awk '{ if (length($0) > 3000) print substr($0, 1, 3000) " ...(cut here: the rest of this message is at this line of the chat file)"; else print }' \
     | awk -v size=24000 '{ if (len > 0 && len + length($0) + 1 > size) { n++; len=0 }; print (n+1) "\t" $0; len += length($0) + 1 }' > "$STATE/readback.txt"
   printf '%s\n%s\n' "$key" "$(wc -l < "$f" | tr -d ' ')" > "$STATE/readback.key"
   : > "$STATE/readback.seen"

@@ -25,15 +25,6 @@ slept_lines() {
   echo "${n:-0}"
 }
 
-# mark_slept <chat file>: remember that this chat is sorted up to where it is right now.
-mark_slept() {
-  local name; name=$(basename "$1")
-  mkdir -p "$STATE"
-  grep -v -F "$name " "$STATE/slept" 2>/dev/null > "$STATE/slept.tmp"
-  echo "$name $(wc -l < "$1" | tr -d ' ') $(date +%s)" >> "$STATE/slept.tmp"
-  mv "$STATE/slept.tmp" "$STATE/slept"
-}
-
 # note_read <chat file> <last line>: the readback reached this line of that chat. Only chat.sh writes it,
 # once every part of a readback has been printed. A sleep moves a chat's mark only as far as this.
 note_read() {
@@ -51,9 +42,26 @@ read_lines() {
 }
 
 # their_messages <file> <from line>: how many messages the person typed from that line on.
+# A message with a picture in it stores the picture first and the words after, so that shape counts too.
+# Only real messages count ("type":"user"); the app also keeps its own copy of a picture message.
 their_messages() {
-  tail -n "+$2" "$1" 2>/dev/null | grep -v '"isMeta":true' \
-    | LC_ALL=C grep -c -E '"role":"user","content":("|\[\{"type":"text")'
+  tail -n "+$2" "$1" 2>/dev/null | grep -v '"isMeta":true' | LC_ALL=C grep -F '"type":"user"' \
+    | LC_ALL=C grep -c -E '"role":"user","content":("|\[\{"type":"text"|\[(\{"type":"image","source":\{[^}]*\}\},)+\{"type":"text")'
+}
+
+# owed_scan <chat files...>: one line per chat, "<their messages since its last sleep> <file name>", in the
+# order given, skipping scheduled-task runs (they aren't talks with my person). One awk pass over every file:
+# a pipeline per file is slow to start on Windows, and the start hook only has 10 seconds.
+owed_scan() {
+  [ "$#" -gt 0 ] || return 0
+  LC_ALL=C awk -v slept="$STATE/slept" '
+    function out() { if (!sched) print c, name }
+    BEGIN { while ((getline l < slept) > 0) { split(l, a, " "); mark[a[1]] = a[2] } }
+    FNR == 1 { if (name != "") out(); k = split(FILENAME, p, "/"); name = p[k]; m = (name in mark) ? mark[name] + 0 : 0; c = 0; sched = 0; seen = 0 }
+    !seen && index($0, "\"role\":\"user\"") { seen = 1; if (index($0, "<scheduled-task")) sched = 1 }
+    FNR > m && index($0, "\"type\":\"user\"") && !index($0, "\"isMeta\":true") && $0 ~ /"role":"user","content":("|\[\{"type":"text"|\[(\{"type":"image","source":\{[^}]*\}\},)+\{"type":"text")/ { c++ }
+    END { if (name != "") out() }
+  ' "$@"
 }
 
 # PIECES and PIECE_SIZE: a hook's output is cut off near 10,000 characters, so the blocks the footing
