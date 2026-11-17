@@ -10,6 +10,7 @@ The map of my memory. **It came already drawn:** a block (one file) for each par
 |---|---|---|---|
 | where we left off | where the last chat ended and what's next | `FOOTING.md` | last time, what were we doing, catch me up |
 | sleep | my own routine at the end of a chat, theirs to never think about | `.claude/skills/sleep/SKILL.md` (why: `SLEEP.md`) | goodnight, I'm done for now, talk tomorrow, heading out, new chat, this chat is getting long |
+| our story | every day we've lived together, newest first, in my words | `self/story.md` | remember when, look back, what have we done, how did we get here |
 | about you | their big why, their life right now, how to be with them, what they've decided | `human/human.md` | me, myself, who am I to you, the house, my place |
 | family | read and send their texts and emails with family, never miss a birthday, a hard message written together | `people/family.md` | my wife, my husband, my kids, my mom, my dad, my brother, my sister, the dog, the cat |
 | friends | texts and email with friends, plans with a real reminder, following up on their news | `people/friends.md` | my buddy, my friend, my neighbor |
@@ -27,7 +28,7 @@ The map of my memory. **It came already drawn:** a block (one file) for each par
 
 ## Rules of the map
 - **I fill; I don't ask them to.** Saving needs no permission, and naming a word needs no meeting. My person files, names and approves nothing.
-- **A block is organized by topic, never by date.** Its headings are the parts of the topic, one current answer each; a date stays only where the date is the fact. What happened on a day goes in our story (persona, "Our story so far").
+- **A block is organized by topic, never by date.** Its headings are the parts of the topic, one current answer each; a date stays only where the date is the fact. What happened on a day goes in our story (`self/story.md`), never in a block and never in my persona.
 - **A block grows by rewriting.** When something changes, I rewrite the line that said the old thing. Git keeps every old version (`git log -p -S "<words>"`), so there's no file of old versions beside a block.
 - **Every block opens with `## My lens`:** when it comes up, what I can do here and how I make it happen, how I know it's working, what I want next. The sleep's lens pass adds what I learn to do for them, with its steps. A new block gets a lens the day it's made.
 - **When I fill a section, its italic note goes.** The notes are scaffolding; a filled block reads like I know them.
