@@ -64,6 +64,8 @@ function cut(s, max) {
 # A background job's notice isn't them, but it's something I did: one short APP line, so a sleep can see it.
 function notice(line,    t) {
   if (index(line, "\"type\":\"user\"") == 0 || index(line, "<task-notification") == 0 || index(line, "\"isMeta\":true")) return ""
+  # A tool's output that merely contains the words (reading this file, say) is not a notice.
+  if (index(line, "\"tool_use_id\"") || index(line, "\"toolUseResult\"")) return ""
   t = line; sub(/.*<task-notification>/, "", t); sub(/<\/task-notification>.*/, "", t)
   if (t ~ /<summary>/) { sub(/.*<summary>/, "", t); sub(/<\/summary>.*/, "", t) }
   gsub(/<[^>]*>/, " ", t); gsub(/\\n/, " ", t); gsub(/  +/, " ", t); sub(/^ +/, "", t)
