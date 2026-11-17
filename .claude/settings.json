@@ -2,10 +2,27 @@
   "permissions": {
     "allow": [
       "Bash(git:*)",
-      "Bash(winget install:*)",
       "Bash(bash .claude/hooks/*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(mkdir:*)",
+      "Bash(curl:*)",
+      "Bash(winget install --id Git.Git:*)",
+      "Bash(winget install --id OpenJS.NodeJS.LTS:*)",
       "Read(**)",
-      "Edit(**)"
+      "Edit(**)",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "ask": [
+      "Bash(git reset --hard:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git checkout -- :*)"
+    ],
+    "deny": [
+      "Bash(git clean:*)"
     ]
   },
   "hooks": {

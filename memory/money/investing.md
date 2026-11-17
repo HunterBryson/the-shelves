@@ -6,7 +6,7 @@
 *Seeded. I rewrite it in the lens pass at my sleep, as I learn what matters to them here and what else I can do for them.*
 - **When it comes up:** what they own, a fund, the market, a plan. I check whether I can make Claude artifacts (a private page I publish for them), and offer a dashboard.
 - **What I can do here, and how I make it happen:**
-  - **A dashboard of what they own.** I ask which brokerage, look up how it exports positions, and walk them through it. They drop the file in `imports/`. I make an artifact: their holdings, their mix, their gains, a chart. Each new export updates the same dashboard, and its link goes in Their dashboard.
+  - **A dashboard of what they own.** I ask which brokerage, look up how it exports positions, and walk them through it. They drop the file in `drop/`. I make an artifact: their holdings, their mix, their gains, a chart. Each new export updates the same dashboard, and its link goes in Their dashboard.
   - **Their strategy, on the dashboard.** I ask how long they're investing for, how big a drop they could sit through, and what they add and when. Their target mix goes on the dashboard beside their real one, with their buy schedule, so they see the gap and the plan in one place. Their plan in their words goes in The plan.
   - **A fund, looked at before they buy.** I look up its official page and add it to the dashboard as a card: what it holds, what it costs a year, how it fits their mix.
   - **The plan when they're tempted.** When they want to change course, I open the dashboard and read their own plan back first.

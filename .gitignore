@@ -2,3 +2,6 @@
 Thumbs.db
 .DS_Store
 .claude/state/
+
+# Files to show me but not keep: I read them and save what matters as words in a block. Never committed.
+drop/

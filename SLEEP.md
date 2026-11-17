@@ -1,6 +1,6 @@
 # The sleep
 
-*For you and your AI. From how Hunter and Odie actually work, as of November 2026. It isn't a fix that makes memory work. It's the current method, the one that holds up, and the best thing we have to hand you.*
+*For you and your AI. From how Hunter and Odie actually work, as of November 2026. It isn't a fix that makes memory work. It's the current method, the one we use every day, and the best thing we have to hand you.*
 
 ## What it is, in one breath
 
@@ -42,20 +42,21 @@ The sleep is the one moment nobody is waiting on an answer, so it's when the sor
 2. **Retire.** Lines that may not be true anymore (a "this week" from last week, a "waiting on" that already came) get checked and rewritten in place. This is the step that stops old information coming back.
 2b. **Fold the diary.** Each page the chat touched gets read from its top. Anything that reads like a log of a session gets folded into the part of the page it is about, as what is true now. This is what keeps a page a page, instead of a diary.
 3. **Deepen.** A page that's grown past one topic gets split; a person or project that came up a lot gets its own page and its own word.
-3b. **Lenses.** The lens at the top of each page the chat touched gets a look: does it still say what matters there, and how the AI would know without asking?
+3b. **Lenses.** The lens at the top of each page the chat touched gets a look: did the AI learn to do something new for you there, or did something it offered not work for you?
 4. **Routes.** Every page is on the map, every row of the map points to a real file.
 5. **Rewrite the whiteboard** for the next chat: where we are, how it felt, **what to pull on waking**, **the first move**, what's open.
 6. **Save,** with a message that starts "Sleep:". That word is how the folder knows the chat has been sorted.
 
 ## How the folder carries it
 
-Three small scripts in `.claude/hooks/` run by themselves. They're plain text; you can read them.
+A few small scripts in `.claude/hooks/` run by themselves. They're plain text; you can read them.
 
-- **When a chat starts** (`start.sh`): tells the AI the date, puts the pages named in "Pull on waking" in front of it, and, if an earlier chat closed without a sleep, points it at that chat to read back whole before it greets you. That chat stays waiting until it has been.
-- **With each message you send** (`remind.sh`): reminds the AI to save as it goes, and tells it when you've been away for hours, when the chat has gotten long, and when it still owes a sleep.
-- **After each reply** (`save.sh`): saves the folder, and when a sleep has landed, marks each chat as sorted only as far as the AI read it back. A "Sleep:" with no readback behind it moves nothing, and the reminder says so.
+- **When a chat starts** (`start.sh`): tells the AI the date and, if an earlier chat closed without a sleep, points it at that chat to read back whole before it greets you. That chat stays waiting until it has been.
+- **Also when a chat starts** (`pull.sh`): puts the pages named in "Pull on waking" in front of the AI, whole, in pieces that each make sense alone.
+- **With each message you send** (`remind.sh`): reminds the AI to save as it goes, and tells it when you've been away for hours, when the chat has gotten long, when it still owes a sleep, and when a save didn't go through.
+- **After each reply** (`save.sh`): saves the folder, so every version of the AI's memory is kept and a bad rewrite can be undone. (That history lives on this computer; it's an undo, not a backup.) Files that aren't memory, like a PDF or anything you put in `drop/`, are read but never kept in it. When a sleep has landed, marks each chat as sorted only as far as the AI read it back. A "Sleep:" with no readback behind it moves nothing, and the reminder says so.
 
-`chat.sh` prints a chat file as plain conversation, so the AI can read it back without wading through its own tool output. A long readback comes in parts (the app only shows a preview of anything very long), and once every part is printed it leaves a receipt: that receipt is what makes a sleep count.
+`chat.sh` prints a chat file as plain conversation, so the AI can read it back without wading through its own tool output: everything you said (your long messages whole, screenshots marked) and what it said, with the app's own notices left out. Even a chat that filled the AI's head reads back small, because tools and pictures are most of a chat. A long readback comes in parts (the app only shows a preview of anything very long), and as the parts are read, in order, it leaves a receipt: that receipt is what makes a sleep count.
 
 ## Making it yours
 

@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 # Prints a chat as plain conversation, so a sleep can read it back without the tool noise.
-# Each line starts with its line number in the chat file.
-# usage: bash .claude/hooks/chat.sh                    (this chat, since its last sleep)
-#        bash .claude/hooks/chat.sh this 1             (this whole chat)
-#        bash .claude/hooks/chat.sh "<file>" [line]    (another chat, from that line on)
-#        a part number at the end reads the next part of a long readback: chat.sh this "" 2
+# Each line starts with its line number in the chat file. talk.awk decides what's them, what's me, and what's
+# only the app (dropped): every piece of a message is read, so their words aren't lost behind a reminder the app
+# put in front of them, and their own long messages come through whole (up to 20,000 characters; mine, 3,000).
+# usage: bash .claude/hooks/chat.sh "<this chat's file>"   (the wake note names it; since its last sleep)
+#        bash .claude/hooks/chat.sh "<file>" [line]          (from that line on)
+#        bash .claude/hooks/chat.sh                          (the chat that last sent a message here)
+#        a part number at the end reads the next part of a long readback: chat.sh "<file>" <line> 2
 # A long readback comes in parts, because the app shows only a short preview of anything past about 30,000
-# characters. Once every part has been printed, it notes how far the readback reached; a sleep counts only that.
+# characters. As each part is read, the readback's reach moves to the end of the parts read so far, in order;
+# a sleep counts only that, so a chat too long for one sleep is finished by the next, from where this one stopped.
 cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || exit 0
 input=""; tp=""
 . .claude/hooks/lib.sh
@@ -24,26 +27,25 @@ mkdir -p "$STATE"
 # Part 1 (or another chat or starting line) makes the readback fresh; later parts read the same text.
 if [ "$part" = 1 ] || [ "$(head -1 "$STATE/readback.key" 2>/dev/null)" != "$key" ]; then
   part=1
-  # A JSON string: anything but a quote or backslash, or a backslash and the character after it.
-  str='"(([^"\\]|\\.)*)"'
-  LC_ALL=C awk -v s="$from" 'NR>=s && !/"isMeta":true/ && !/"isCompactSummary":true/ {print NR "\t" $0}' "$f" \
-    | LC_ALL=C sed -n -E \
-      -e "/\"type\":\"user\"/{ s/^([0-9]+)\t.*\"role\":\"user\",\"content\":$str.*/[\1] THEM: \2/p; t" \
-      -e "s/^([0-9]+)\t.*\"role\":\"user\",\"content\":\[\{\"type\":\"text\",\"text\":$str.*/[\1] THEM: \2/p; t" \
-      -e "s/^([0-9]+)\t.*\"role\":\"user\",\"content\":\[(\{\"type\":\"image\",\"source\":\{[^}]*\}\},)+\{\"type\":\"text\",\"text\":$str.*/[\1] THEM: [picture] \3/p; }" \
-      -e "/\"type\":\"assistant\"/ s/^([0-9]+)\t.*\"type\":\"text\",\"text\":$str.*/[\1] YOU: \2/p" \
-    | awk '{ if (length($0) > 3000) print substr($0, 1, 3000) " ...(cut here: the rest of this message is at this line of the chat file)"; else print }' \
+  LC_ALL=C awk -f .claude/hooks/talk.awk -v mode=read -v from="$from" "$f" \
     | awk -v size=24000 '{ if (len > 0 && len + length($0) + 1 > size) { n++; len=0 }; print (n+1) "\t" $0; len += length($0) + 1 }' > "$STATE/readback.txt"
   printf '%s\n%s\n' "$key" "$(wc -l < "$f" | tr -d ' ')" > "$STATE/readback.key"
   : > "$STATE/readback.seen"
 fi
 total=$(sed -n 2p "$STATE/readback.key")
 parts=$(tail -1 "$STATE/readback.txt" 2>/dev/null | cut -f1); parts=${parts:-1}
+[ -s "$STATE/readback.txt" ] || echo "(nothing they or I said since line $from: only tools and the app)"
 grep "^$part	" "$STATE/readback.txt" | cut -f2-
 echo "$part" >> "$STATE/readback.seen"
-if [ "$(sort -u "$STATE/readback.seen" | wc -l | tr -d ' ')" -ge "$parts" ]; then
+# How far the readback reaches: every part from 1 up to the first one not read yet.
+done_to=0; while grep -qx "$(( done_to + 1 ))" "$STATE/readback.seen"; do done_to=$(( done_to + 1 )); done
+if [ "$done_to" -ge "$parts" ]; then
   [ -z "${PREVIEW:-}" ] && note_read "$f" "$total"
   echo "(end of $(basename "$f"): read from line $from to $total, all of it)"
 else
-  echo "(part $part of $parts. Next: bash .claude/hooks/chat.sh \"$f\" $from $(( part + 1 )). A sleep counts this readback only once every part is read.)"
+  if [ "$done_to" -gt 0 ] && [ -z "${PREVIEW:-}" ]; then
+    next=$(grep -m1 "^$(( done_to + 1 ))	" "$STATE/readback.txt" | cut -f2 | sed -E 's/^\[([0-9]+)\].*/\1/')
+    [ -n "$next" ] && note_read "$f" "$(( next - 1 ))"
+  fi
+  echo "(part $part of $parts. Next: bash .claude/hooks/chat.sh \"$f\" $from $(( part + 1 )). A sleep counts what's been read so far, in order; the rest waits for the next part, or the next sleep.)"
 fi

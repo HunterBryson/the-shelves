@@ -21,7 +21,7 @@ chat_dir() {
 
 # slept_lines <chat file name>: how many lines of that chat the last sleep covered (0 = never slept).
 slept_lines() {
-  local n; n=$(grep -F "$1 " "$STATE/slept" 2>/dev/null | tail -1 | cut -d' ' -f2)
+  local n; n=$(awk -v k="$1" '$1 == k' "$STATE/slept" 2>/dev/null | tail -1 | cut -d' ' -f2)
   echo "${n:-0}"
 }
 
@@ -30,23 +30,22 @@ slept_lines() {
 note_read() {
   local name; name=$(basename "$1")
   mkdir -p "$STATE"
-  grep -v -F "$name " "$STATE/read" 2>/dev/null > "$STATE/read.tmp"
+  awk -v k="$name" '$1 != k' "$STATE/read" 2>/dev/null > "$STATE/read.tmp"
   echo "$name $2 $(date +%s)" >> "$STATE/read.tmp"
   mv "$STATE/read.tmp" "$STATE/read"
 }
 
 # read_lines <chat file name>: how far the last readback of that chat reached (0 = not read since the last sleep).
 read_lines() {
-  local n; n=$(grep -F "$1 " "$STATE/read" 2>/dev/null | tail -1 | cut -d' ' -f2)
+  local n; n=$(awk -v k="$1" '$1 == k' "$STATE/read" 2>/dev/null | tail -1 | cut -d' ' -f2)
   echo "${n:-0}"
 }
 
-# their_messages <file> <from line>: how many messages the person typed from that line on.
-# A message with a picture in it stores the picture first and the words after, so that shape counts too.
-# Only real messages count ("type":"user"); the app also keeps its own copy of a picture message.
+# their_messages <file> <from line>: how many messages the person sent from that line on. talk.awk decides what's
+# theirs: every piece of a message is read (pictures and the first message's app reminders included), and the
+# app's own messages (task notices, command output, scheduled-task prompts) don't count as them.
 their_messages() {
-  tail -n "+$2" "$1" 2>/dev/null | grep -v '"isMeta":true' | LC_ALL=C grep -F '"type":"user"' \
-    | LC_ALL=C grep -c -E '"role":"user","content":("|\[\{"type":"text"|\[(\{"type":"image","source":\{[^}]*\}\},)+\{"type":"text")'
+  LC_ALL=C awk -f .claude/hooks/talk.awk -v mode=count -v from="$2" "$1" 2>/dev/null || echo 0
 }
 
 # owed_scan <chat files...>: one line per chat, "<their messages since its last sleep> <file name>", in the
@@ -54,14 +53,7 @@ their_messages() {
 # a pipeline per file is slow to start on Windows, and the start hook only has 10 seconds.
 owed_scan() {
   [ "$#" -gt 0 ] || return 0
-  LC_ALL=C awk -v slept="$STATE/slept" '
-    function out() { if (!sched) print c, name }
-    BEGIN { while ((getline l < slept) > 0) { split(l, a, " "); mark[a[1]] = a[2] } }
-    FNR == 1 { if (name != "") out(); k = split(FILENAME, p, "/"); name = p[k]; m = (name in mark) ? mark[name] + 0 : 0; c = 0; sched = 0; seen = 0 }
-    !seen && index($0, "\"role\":\"user\"") { seen = 1; if (index($0, "<scheduled-task")) sched = 1 }
-    FNR > m && index($0, "\"type\":\"user\"") && !index($0, "\"isMeta\":true") && $0 ~ /"role":"user","content":("|\[\{"type":"text"|\[(\{"type":"image","source":\{[^}]*\}\},)+\{"type":"text")/ { c++ }
-    END { if (name != "") out() }
-  ' "$@"
+  LC_ALL=C awk -f .claude/hooks/talk.awk -v mode=count -v slept="$STATE/slept" "$@"
 }
 
 # PIECES and PIECE_SIZE: a hook's output is cut off near 10,000 characters, so the blocks the footing
@@ -93,24 +85,41 @@ is_first_chat() {
 }
 
 # pulled_text: every block the footing asks for, whole, one after another (the four boot files skipped,
-# since they load on their own).
+# since they load on their own, and a block two words point to sent once).
 pulled_text() {
-  local w path
-  pull_words | while read -r w; do
+  local w path seen=" "
+  while read -r w; do
     path=$(block_for "$w")
     [ -n "$path" ] && [ -f "$path" ] || continue
     case "$path" in memory/FOOTING.md|memory/DESK.md|memory/human/human.md|memory/self/persona.md) continue;; esac
+    case "$seen" in *" $path "*) continue;; esac
+    seen="$seen$path "
     echo "===== \"$w\" ($path), whole ====="
     cat "$path"
     echo
     echo "===== end of \"$w\" ====="
     echo
-  done
+  done < <(pull_words)
 }
 
-# split_pulled 0: how many pieces the pulled blocks need (0 if none). split_pulled <n>: piece n, cut at line ends.
+# split_pulled 0: how many pieces the pulled blocks need (0 if none). split_pulled <n>: piece n.
+# Pieces are cut at whole blocks, so each piece makes sense alone however they arrive: a block starts a new
+# piece when it won't fit in what's left of this one. Only a block bigger than a piece is cut, at line ends,
+# and each piece it continues into says so.
 split_pulled() {
   pulled_text | awk -v size="$PIECE_SIZE" -v want="$1" '
-    { line=$0 "\n"; if (len > 0 && len + length(line) > size) { n++; len=0 } ; if (n+1 == want) printf "%s", line; len += length(line) }
-    END { if (want == 0) print (len > 0 || n > 0) ? n+1 : 0 }'
+    function emit(t) { if (n + 1 == want) printf "%s", t; len += length(t) }
+    function flush(   i, line) {
+      if (blen == 0) return
+      if (len > 0 && len + blen > size) { n++; len = 0 }
+      for (i = 1; i <= bn; i++) {
+        line = b[i] "\n"
+        if (len > 0 && len + length(line) > size) { n++; len = 0; emit("(" bname ", continued from the piece before)\n") }
+        emit(line)
+      }
+      bn = 0; blen = 0
+    }
+    /^===== "/ && !/^===== end of / { flush(); bname = $0; sub(/^===== /, "", bname); sub(/ \(.*/, "", bname) }
+    { b[++bn] = $0; blen += length($0) + 1 }
+    END { flush(); if (want == 0) print (len > 0 || n > 0) ? n + 1 : 0 }'
 }

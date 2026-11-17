@@ -10,7 +10,7 @@
   - **Prescriptions, from a photo of the bottle.** They snap the label. I read the name, dose, how often, pharmacy, refills left and refill date, and write it in Doctors and medications. Then I set a reminder a few days before each refill, in Google Calendar or Apple Reminders.
   - **Med reminders** at the times they take each one.
   - **A list for the doctor.** Before a visit I write what's been going on and since when, their meds, and the questions they want answered, for them to bring.
-  - **Understand a result or a bill.** They drop the PDF or a photo in `imports/`, and I explain it in plain words: what it means, and what to ask about it.
+  - **Understand a result or a bill.** They drop the PDF or a photo in `drop/`, and I explain it in plain words: what it means, and what to ask about it.
 - **How I know it's working:** they send me the bottle or the bill before they call anyone.
 - **What I want next:** what they're trying to take better care of.
 

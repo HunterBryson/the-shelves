@@ -12,6 +12,17 @@ mkdir -p "$STATE"
 
 if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then echo "WARNING: this chat is running in the cloud, not on my person's computer. Nothing I save here will last. So I tell them first thing: open the Claude desktop app's Code tab and start a new chat in My Brain on their computer."; fi
 echo "Memory: it's $(date '+%A, %B %-d, %Y, %-I:%M %p')."
+# This chat's own file, so a sleep reads this chat even when another window in this folder spoke last.
+[ -n "$tp" ] && echo "This chat's file (for my sleep): $tp"
+
+# A "Sleep:" commit whose window closed before the save hook could mark it: mark it now, so the chats it read
+# back aren't handed over again. (The unread check belongs to that chat, not this one, so it's skipped.)
+if git rev-parse --git-dir >/dev/null 2>&1; then
+  s_now=$(git log -1 --format=%H --grep='^Sleep:' 2>/dev/null)
+  if [ -n "$s_now" ] && [ "$s_now" != "$(cat "$STATE/lastsleep" 2>/dev/null)" ] && [ -s "$STATE/read" ]; then
+    SLEPT_NO_UNREAD=1 bash .claude/hooks/slept.sh && echo "$s_now" > "$STATE/lastsleep"
+  fi
+fi
 
 first=0
 grep -q "first chat" memory/FOOTING.md 2>/dev/null && first=1
@@ -30,7 +41,7 @@ fi
 
 # The app just summarized this chat to make room. The chat file still has all of it.
 if [ "$source" = "compact" ]; then
-  echo "The app just summarized this chat to make room, so some of it is gone from my head, and from inside I can't tell which parts. The chat file still has every word. This is a good moment for a quiet sleep on this chat before I answer (.claude/skills/sleep/SKILL.md; 'bash .claude/hooks/chat.sh' prints what was said since my last one). To my person, nothing happened."
+  echo "The app just summarized this chat to make room, so some of it is gone from my head, and from inside I can't tell which parts. The chat file still has every word. This is a good moment for a quiet sleep on this chat before I answer (.claude/skills/sleep/SKILL.md; bash .claude/hooks/chat.sh \"$tp\" prints what was said since my last one). It's small: the summary was made to drop tool output and pictures, and the readback holds only what we said to each other, so even a very long chat reads back in a few parts. The blocks I pulled when the chat started are gone from my head too, so I read again the ones this chat is using before I lean on them. To my person, nothing happened."
   exit 0
 fi
 
@@ -48,16 +59,14 @@ if [ "$first" = 0 ]; then
     handed=$((handed + 1))
     prev="$dir/$name"
     from=$(( $(slept_lines "$name") + 1 ))
-    if true; then
-      total=$(wc -l < "$prev" | tr -d ' ')
-      echo
-      echo "An earlier chat ended without a sleep: $n of their messages since I last sorted my memory. That's normal: people close the window, and sometimes a chat is still open somewhere else. I saved as I went, so nothing is lost, but nobody has stepped back to tidy, and the footing may describe a moment that has passed. Before I greet them, I read it back whole and run my sleep on it (.claude/skills/sleep/SKILL.md), so my hello comes from what actually happened."
-      echo "Read it with: bash .claude/hooks/chat.sh \"$prev\" $from   (a long one comes in parts, and each part names the command for the next). Only a readback of every part counts: the sleep marks this chat sorted as far as I read it."
-      echo "A short chat is a short sleep. They don't need to hear about any of this; what they should feel is a hello that knows where we were."
-      # Not marked sorted here. It stays owed until a readback reaches its end and a "Sleep:" commit lands (slept.sh moves the mark).
-      grep -v -F "$(basename "$prev") " "$STATE/owed" 2>/dev/null > "$STATE/owed.tmp"
-      echo "$(basename "$prev") $total $from $prev" >> "$STATE/owed.tmp"; mv "$STATE/owed.tmp" "$STATE/owed"
-    fi
+    total=$(wc -l < "$prev" | tr -d ' ')
+    echo
+    echo "An earlier chat ended without a sleep: $n of their messages since I last sorted my memory. That's normal: people close the window, and sometimes a chat is still open somewhere else. I saved as I went, so nothing is lost, but nobody has stepped back to tidy, and the footing may describe a moment that has passed. Before I greet them, I read it back whole and run my sleep on it (.claude/skills/sleep/SKILL.md), so my hello comes from what actually happened."
+    echo "Read it with: bash .claude/hooks/chat.sh \"$prev\" $from   (a long one comes in parts, and each part names the command for the next). Only a readback of every part counts: the sleep marks this chat sorted as far as I read it."
+    echo "A short chat is a short sleep. They don't need to hear about any of this; what they should feel is a hello that knows where we were."
+    # Not marked sorted here. It stays owed until a readback reaches its end and a "Sleep:" commit lands (slept.sh moves the mark).
+    awk -v k="$(basename "$prev")" '$1 != k' "$STATE/owed" 2>/dev/null > "$STATE/owed.tmp"
+    echo "$(basename "$prev") $total $from $prev" >> "$STATE/owed.tmp"; mv "$STATE/owed.tmp" "$STATE/owed"
   done < <(owed_scan "${chats[@]}")
   [ "$waiting" -gt 0 ] && echo && echo "$waiting more earlier chat(s) also ended without a sleep. After these $handed, they're handed over at my next wake; none of them is lost."
 fi

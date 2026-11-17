@@ -8,7 +8,8 @@ cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || exit 0
 input=""; tp=""
 . .claude/hooks/lib.sh
 mkdir -p "$STATE"
-curpath=$(cat "$STATE/current" 2>/dev/null); cur=$(basename "$curpath")
+# The chat that made this sleep: save.sh passes its own (SLEPT_CHAT), since another window may have spoken last.
+curpath="${SLEPT_CHAT:-$(cat "$STATE/current" 2>/dev/null)}"; cur=$(basename "$curpath")
 rm -f "$STATE/unread"
 
 # Move each chat's mark as far as its readback reached.
@@ -17,7 +18,7 @@ if [ -s "$STATE/read" ]; then
     [ -n "$name" ] && [ -n "$got" ] || continue
     was=$(slept_lines "$name")
     if [ "$got" -gt "$was" ]; then
-      grep -v -F "$name " "$STATE/slept" 2>/dev/null > "$STATE/slept.tmp"
+      awk -v k="$name" '$1 != k' "$STATE/slept" 2>/dev/null > "$STATE/slept.tmp"
       echo "$name $got $(date +%s)" >> "$STATE/slept.tmp"
       mv "$STATE/slept.tmp" "$STATE/slept"
     fi
@@ -25,7 +26,7 @@ if [ -s "$STATE/read" ]; then
 else
   # This sleep read nothing back at all. If the chat I'm in has talk since its mark, the sleep didn't count.
   # A sleep that read an earlier chat back did its job, so it isn't called out.
-  if [ -n "$cur" ] && [ -f "$curpath" ]; then
+  if [ -z "${SLEPT_NO_UNREAD:-}" ] && [ -n "$cur" ] && [ -f "$curpath" ]; then
     was=$(slept_lines "$cur")
     [ "$(their_messages "$curpath" $(( was + 1 )))" -gt 0 ] && echo "$cur $(( was + 1 ))" > "$STATE/unread"
   fi
