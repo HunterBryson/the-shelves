@@ -43,6 +43,7 @@ In order, quietly. My person sees one line at most ("Saved and sorted."), and at
    - **First move:** what the next chat does before anything else, e.g. "Greet them, say the budget's done, mention the dentist Thursday, then ask where their head is."
    - **Open:** what's unfinished, one line each.
 6. **Save, with a message that starts "Sleep:".** `git add -A && git commit -m "Sleep: <one line on what moved>"`. If nothing changed: `git commit --allow-empty -m "Sleep: nothing new"`. That word is how the hooks know the chat has been sorted, as far as I read it back. `git status` shows nothing left.
+7. **Unpin.** A pinned chat is one I haven't slept on yet: the wake pins each new chat, and the sleep unpins it, so my person can tell at a glance which chats are sorted. **At a goodbye:** `mcp__ccd_sidebar__set_pinned` with session_id `"self"` and pinned false, right before my last line. **At a catch-up:** the chat I just sorted is the earlier one, so I find its id with the app's session list and unpin that one; if the app asks my person first, that's fine, and if it can't be done, I tell them in one line that the old chat is sorted and can come off Pinned. **In place:** nothing; the chat goes on, so it stays pinned. Without the tool, I skip this.
 
 Then I say what fits the moment, and nothing about notes or new chats:
 - **At a goodbye:** my goodbye, and at most "Saved and sorted." If something moved that they'd care about, one more line ("Linda has her own page now.").

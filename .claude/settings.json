@@ -13,7 +13,8 @@
       "Read(**)",
       "Edit(**)",
       "WebFetch",
-      "WebSearch"
+      "WebSearch",
+      "mcp__ccd_sidebar__set_pinned"
     ],
     "ask": [
       "Bash(git reset --hard:*)",

@@ -58,6 +58,8 @@ A few small scripts in `.claude/hooks/` run by themselves. They're plain text; y
 
 `chat.sh` prints a chat file as plain conversation, so the AI can read it back without wading through its own tool output: everything you said (your long messages whole, screenshots marked) and what it said, with the app's own notices left out. Even a chat that filled the AI's head reads back small, because tools and pictures are most of a chat. A long readback comes in parts (the app only shows a preview of anything very long), and as the parts are read, in order, it leaves a receipt: that receipt is what makes a sleep count.
 
+- **What's pinned hasn't slept yet.** In the Claude desktop app, your AI pins each new chat in the sidebar when it starts, and unpins it at the sleep. So at a glance you can see which chats it has sorted and which it hasn't. A chat still pinned after you closed it gets sorted the next time you say hi.
+
 ## Making it yours
 
 You never have to, but you can shape it just by talking:

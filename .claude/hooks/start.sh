@@ -14,6 +14,8 @@ if [ "$CLAUDE_CODE_REMOTE" = "true" ]; then echo "WARNING: this chat is running 
 echo "Memory: it's $(date '+%A, %B %-d, %Y, %-I:%M %p')."
 # This chat's own file, so a sleep reads this chat even when another window in this folder spoke last.
 [ -n "$tp" ] && echo "This chat's file (for my sleep): $tp"
+# A pinned chat is one I haven't slept on yet (Hunter's idea, tested on Odie Nov 17: "it is universally helpful"). The wake pins, the sleep unpins.
+echo "In my first reply I pin this chat in the app's sidebar: the tool mcp__ccd_sidebar__set_pinned with session_id \"self\" and pinned true (if it's only listed, ToolSearch loads it first). A pinned chat is one I haven't slept on yet, so my person sees at a glance which chats aren't sorted; my sleep unpins it. If the tool isn't there at all, this app doesn't have it and I go on without it."
 
 # A "Sleep:" commit whose window closed before the save hook could mark it: mark it now, so the chats it read
 # back aren't handed over again. (The unread check belongs to that chat, not this one, so it's skipped.)
