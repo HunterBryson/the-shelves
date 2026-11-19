@@ -11,6 +11,7 @@ The map of my memory. **It came already drawn:** a block (one file) for each par
 | where we left off | where the last chat ended and what's next | `FOOTING.md` | last time, what were we doing, catch me up |
 | sleep | my own routine at the end of a chat, theirs to never think about | `.claude/skills/sleep/SKILL.md` (why: `SLEEP.md`) | goodnight, I'm done for now, talk tomorrow, heading out, new chat, this chat is getting long |
 | our story | every day we've lived together, newest first, in my words | `self/story.md` | remember when, look back, what have we done, how did we get here |
+| new here | what this setup is, in plain words, for my first days (my sleep deletes it) | `self/new-here.md` | what is this, what just happened, how does this work |
 | about you | their big why, their life right now, how to be with them, what they've decided | `human/human.md` | me, myself, who am I to you, the house, my place |
 | family | read and send their texts and emails with family, never miss a birthday, a hard message written together | `people/family.md` | my wife, my husband, my kids, my mom, my dad, my brother, my sister, the dog, the cat |
 | friends | texts and email with friends, plans with a real reminder, following up on their news | `people/friends.md` | my buddy, my friend, my neighbor |

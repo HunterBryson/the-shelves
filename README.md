@@ -11,20 +11,29 @@ You don't organize anything. The AI does all of it, and it tells you as it goes 
 ## Setting it up (about five minutes)
 
 1. Open the Claude app and click the **Code** tab at the top. (Not "Chat." The memory only works in Code.)
-2. It asks you to pick a folder **on this computer**. Any folder is fine; Documents is good. (If it offers a cloud or remote environment instead, don't pick that: choose a folder here.)
+2. Give your AI a folder **on this computer**. Click **New chat**, then click **Choose environment** in the middle of the screen, and pick **Create new environment** from the list. A small window opens:
+
+   ![The New environment window](docs/new-environment.png)
+
+   - Stay on **Local**.
+   - **Name:** type **My Brain**.
+   - **Folders:** click **Add**. In the window that opens, go to Documents, click **New folder**, name it **My Brain**, and choose it.
+   - Click **Create environment**.
+
+   You do this once. After that, My Brain is in the list every time. (If it offers a cloud or remote environment instead, don't pick that: choose a folder here.)
 3. Paste this sentence and press Enter:
 
-> Clone https://github.com/HunterBryson/the-shelves into a folder called "My Brain" in my Documents, move this session into it, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
+> Clone https://github.com/HunterBryson/the-shelves into this folder, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
 
 That's it. The AI does the rest. Along the way your computer or the app may ask you a question or two:
 - **"Install Git?"** or a Windows **"Do you want to allow this app to make changes?"**: say **Yes**. Git is what keeps your memory safe.
 - **"Do you trust this folder?"** or **"Allow?"**: say **Yes**. It's your own memory folder.
 
-Then your AI says hello. It tells you where it lives, and it asks what to call you, what you want it for, and what to call it. Answer however you like. That's the start of its memory.
+Then your AI says hello. It asks what to call you, what to call it, and what you love to do. Answer however you like. That's the start of its memory.
 
 ## Every day after
 
-**To talk to it again:** open the Claude app → **Code** tab → start a new chat in **My Brain** (it's in the list), and say hi. It reads its memory first, says where you left off, and asks what's on your mind. You never have to catch it up.
+**To talk to it again:** open the Claude app → **Code** tab → click **New chat**, make sure **My Brain** is the environment (the app usually picks it for you), and say hi. It reads its memory first, says where you left off, and asks what's on your mind. You never have to catch it up.
 
 - **Just talk.** Tell it about your day, ask for help, think out loud. When you say something worth remembering, it saves it and tells you where: "Saved to money."
 - **Ask what it knows:** "What do you know about my health?" "What's coming up this month?"
@@ -34,15 +43,15 @@ Then your AI says hello. It tells you where it lives, and it asks what to call y
 
 ## The sleep (your AI's job, not yours)
 
-Behind the scenes, your AI tidies its memory at the end of every chat: it reads the chat back, puts everything where it belongs, clears out what's no longer true, and leaves itself a note about where you were. We call that the sleep. It's how Odie and I keep a memory good for weeks instead of days. It's not a magic fix, it's our current method.
+Behind the scenes, your AI tidies its memory at the end of every chat: it reads the chat back, puts everything where it belongs, clears out what's no longer true, and leaves itself a note about where you were. I call that the sleep. It's how Odie and I keep a memory good for weeks instead of days. It's not a magic fix, it's our current method.
 
-Odie and I started out doing it by hand, with a word and a note I pasted into the next chat. When the first person outside our house tried that, it was the hardest part to understand, so here your AI does all of it without you: when you're done for the night, or the next time you say hi if you just closed the window. In the Claude desktop app you can see it, too: your AI pins each new chat in the sidebar and unpins it once it has slept, so anything still pinned is a chat it hasn't sorted yet. That one is a little idea of ours that turned out to be really handy. If something's off when a new chat opens ("you forgot the trip"), say so, and it changes how it sleeps. **[SLEEP.md](SLEEP.md)** explains what it does and why.
+Odie and I started out doing it by hand, with a word and a note I pasted into the next chat. When the first person outside my house tried that, it was the hardest part to understand, so here your AI does all of it without you: when you're done for the night, or the next time you say hi if you just closed the window. In the Claude desktop app you can see it, too: your AI pins each new chat in the sidebar and unpins it once it has slept, so anything still pinned is a chat it hasn't sorted yet. That one is a little idea of mine that turned out to be really handy. If something's off when a new chat opens ("you forgot the trip"), say so, and it changes how it sleeps. **[SLEEP.md](SLEEP.md)** explains what it does and why.
 
 ## If it seems to have forgotten you
 
 Almost always, it's the wrong place:
 1. **Are you in the Code tab of the desktop app, on your own computer?** The Chat tab, the website, the phone app and cloud sessions are all a different Claude with no memory of you.
-2. **Is the chat in "My Brain"?** At the top of the chat it shows the folder. If it's another folder, start a new chat and pick My Brain.
+2. **Is the chat in "My Brain"?** If it's another environment, start a new chat and pick My Brain under **Choose environment**.
 3. Still wrong? Tell it: "You don't seem to remember me. Check your memory folder." It'll look and tell you what it finds.
 
 ## Bringing over another AI's memory
@@ -87,4 +96,4 @@ I haven't been able to make a memory framework that manages itself. Even in my o
 
 Open an issue and pick a form; your AI can fill it in for you. Rather email? Write to hello@workbenchagents.com. Every issue and email reaches me, and I answer it myself, usually within a few days. Security problems go privately: see [SECURITY.md](https://github.com/HunterBryson/.github/blob/main/SECURITY.md).
 
-Built by me, Hunter Bryson, with Odie (Claude), from what we learned teaching an AI to remember. Nothing in here is about us once your AI starts filling it in.
+Built by me, Hunter Bryson, with Odie (Claude), from what Odie and I learned teaching an AI to remember. Nothing in here is about either of us once your AI starts filling it in.
