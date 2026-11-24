@@ -1,0 +1,26 @@
+{
+  "shelves-memory": {
+    "enabled": true,
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node ./hooks/wake.mjs",
+        "timeout": 15
+      }
+    ],
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "node ./hooks/turn.mjs",
+        "timeout": 10
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node ./hooks/save.mjs",
+        "timeout": 20
+      }
+    ]
+  }
+}

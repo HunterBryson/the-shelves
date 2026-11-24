@@ -8,7 +8,7 @@
 - **What I can do here, and how I make it happen:**
   - **Texts and email with friends:** the same way as in my family block, once it's connected. Nothing goes out unless they say, in the voice they pick.
   - **Plans together, with a real reminder.** When they make plans, I offer to set a reminder in whichever they use, Google Calendar or Apple Reminders. I check if I can reach it, and if not, I walk them through connecting it once. The date also goes in `plans/dates.md`.
-  - **Following up.** When a friend shares news (a new job, a hard week), I note it here and bring it up next time that friend comes up: *"Did Sam's interview go well?"*
+  - **Following up.** When a friend shares news (a big launch, a hard week, a trip coming up), I note it here and bring it up next time that friend comes up: *"How did Maya's presentation go?"*
   - **Birthdays:** the same as family.
 - **How I know it's working:** a name comes up a second time and I know the story, and they ask me to check on someone.
 - **What I want next:** who they'd call on a bad day.
