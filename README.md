@@ -2,110 +2,133 @@
 
 **Start with one real ask. Watch it become something special to you.**
 
-A persistent memory folder for **Claude or Antigravity**—your life, your schedule, your people, and how you work—kept on your own computer so your AI picks up where you left off every time.
+A living memory folder on your own computer for **Claude or Antigravity**—your schedule, your people, your goals, and how you actually work—so your AI picks up right where you left off every single time.
 
-![Day 1 to Week 2 with The Shelves](docs/shelves-hero.png)
+![From one easy ask to your own personal battlestation](docs/shelves-hero.png)
 
-You don't organize anything. Your AI files what matters as you talk and keeps its shelves tidy behind the scenes.
+Most people bounce off AI for one simple reason: **nobody shows them what to actually ask for.** You open a blank chat, try something huge on day one, get a generic answer, and walk away thinking AI isn't for you.
 
-## Why memory changes what you can ask for
+**The shelves flips that.** Because your AI remembers you across every chat—and keeps refining what it knows—you don't need a master plan. Start with one easy win. Once it nails that, you start seeing how simple the next jump is… and before long, you're having a blast building custom tools around your actual life.
 
-Anyone can have a normal AI scan their calendar or inbox once—and forget everything the moment the window closes. **The Shelves** is a constantly refined memory system, which means each simple ask unlocks a bigger jump:
+You never organize a folder, edit a file, or install anything by hand. **Your AI takes care of all of it.** You just talk.
 
-- **Jump 1 — One easy win:** Connect Gmail or Calendar and ask: *"Help me get on top of my schedule."* Your AI handles the busywork and starts saving how your days actually work.
-- **Jump 2 — The lightbulb:** Halfway through, a simple thought hits: *"What if I connected it to my texts and had it just learn everything about me and how my life works?"* You realize you can ask simple, wild things—and it learns your people, your rhythm, your budget, your dreams, and your sense of humor.
-- **Jump 3 — Your own custom apps:** Once you lean on it for everything you don't have time for or hate doing, the next jump is natural: *"Make us our own app specifically designed for all the areas you've learned and that I rely on now."*
-- **Jump 4 — Your personal battlestation:** *"Alright fella—you know my specs, my schedule, my budget, my dreams, and my humor, and how much I hate clicking too many buttons. Make me an amazing battlestation hub that connects all our apps together using everything you've learned about what I like, and run my computer for me."*
+---
 
-## How all the builds fit together
+## Start in five minutes
 
-![Start with memory, add visual tools whenever you want](docs/plugin-map.png)
+All you need is **your own computer** (Windows or Mac—hosted web or phone chats forget everything when closed) and either the **Claude desktop app** ([claude.ai/download](https://claude.ai/download), **Code** tab) or **Antigravity**.
 
-Start with **the shelves** on its own—and snap on any visual tool whenever you want across **Claude and Antigravity**.
+1. Open **Claude (Code tab)** or **Antigravity** in a local folder on your computer—for example, `Documents\My Brain`.
 
-## What you need
-- **Your own computer** (Windows or Mac). The memory is a folder on that computer, so it stays yours and survives across chats. (Hosted web or phone chats forget everything when closed.)
-- Either the **Claude desktop app** ([claude.ai/download](https://claude.ai/download), **Code** tab) or **Antigravity** on that computer.
+   <details>
+   <summary>Using Claude's Code tab? Click here to see where to pick your folder</summary>
 
-## Setting it up (about five minutes)
-
-1. Open **Claude (Code tab)** or **Antigravity** in a local folder on **this computer**—for example, `Documents\My Brain`. (If you're in Claude's Code tab, click **Choose environment** → **Create new environment** → **Local** → name it **My Brain** → pick that folder.)
+   Click **Choose environment** → **Create new environment** → **Local** → name it **My Brain** → pick that folder.
 
    ![The New environment window](docs/new-environment.png)
 
-2. Paste this sentence and press Enter:
+   </details>
 
-> Clone https://github.com/HunterBryson/the-shelves into this folder, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
+2. Paste this one sentence and press Enter:
 
-That's it. The AI does the rest. Along the way your computer or app may ask you a question or two:
-- **"Install Git?"** or a Windows **"Do you want to allow this app to make changes?"**: say **Yes**. Git is what keeps your memory safe.
-- **"Do you trust this folder?"** or **"Allow?"**: say **Yes**. It's your own memory folder.
+> Clone https://github.com/HunterBryson/the-shelves into this folder, then read its SETUP.md and set yourself up. If anything asks for permission along the way, it's fine.
 
-Then your AI says hello. Ask it one real thing right away—like hooking up your calendar or email to get on top of your schedule—and watch it move in.
+**That's literally it.** Your AI installs what it needs, sets up its own memory, and says hello.
 
-## Every day after
+- If your computer asks **"Install Git?"** or **"Do you want to allow this app to make changes?"**, click **Yes**. Git is what keeps your memory history safe on your machine.
+- If your AI app asks **"Do you trust this folder?"** or **"Allow?"**, click **Yes**. It's your own private memory folder.
 
-**To talk to it again:** open **Claude (Code tab)** or **Antigravity** in your **My Brain** folder and say hi. It reads its memory first, checks what's waiting, says where you left off, and asks what's on your mind. You never have to catch it up.
+> **Coming from ChatGPT, Grok, or another AI?**
+> Bring what it already knows in 30 seconds. Ask your old AI: *"Write down everything you remember about me, everything we've worked on, and everything I've told you I want. In full."* Paste its answer into your new chat—your AI saves it and files every piece where it belongs automatically.
 
-- **Just talk.** Tell it about your day, ask for help, think out loud. When you say something worth remembering, it saves it and tells you where: "Saved to money."
-- **Ask what it knows:** "What do you know about my health?" "What's coming up this month?"
-- **Correct it anytime:** "Actually, Linda's birthday is the 4th." It fixes its memory, not just its answer.
-- **When you're done, you're done.** Close the window, or say goodnight. There's nothing to save and nothing to remember to do.
-- **New chat or old chat, both work.** Start a fresh chat whenever you like, or keep typing in the old one. If a chat gets long enough to slow down, your AI will tell you, once, that a fresh one will be quicker.
+---
 
-## The sleep (your AI's job, not yours)
+## Not sure what to ask on Day 1?
 
-Behind the scenes, your AI tidies its memory at the end of every chat: it reads the chat back, puts everything where it belongs, clears out what's no longer true, and leaves itself a note about where you were. I call that the sleep. It's how Odie and I keep a memory good for weeks instead of days. It's not a magic fix, it's our current method.
+Most people don't know what to ask an AI for. I didn't, until I found out by accident that mine could read and send my texts.
 
-Odie and I started out doing it by hand, with a word and a note I pasted into the next chat. When the first person outside my house tried that, it was the hardest part to understand, so here your AI does all of it without you: when you're done for the night, or the next time you say hi if you just closed the window. In the Claude desktop app you can see it, too: your AI pins each new chat in the sidebar and unpins it once it has slept, so anything still pinned is a chat it hasn't sorted yet. That one is a little idea of mine that turned out to be really handy. If something's off when a new chat opens ("you forgot the trip"), say so, and it changes how it sleeps. **[SLEEP.md](SLEEP.md)** explains what it does and why.
+Your AI's folder already starts laid out like a real life—and every area knows what your AI can actually do for you there. Pick whichever one sounds most useful (or most fun) and ask:
 
-## If it seems to have forgotten you
-
-Almost always, it's the wrong place:
-1. **Are you in the Code tab of the desktop app, on your own computer?** The Chat tab, the website, the phone app and cloud sessions are all a different Claude with no memory of you.
-2. **Is the chat in "My Brain"?** If it's another environment, start a new chat and pick My Brain under **Choose environment**.
-3. Still wrong? Tell it: "You don't seem to remember me. Check your memory folder." It'll look and tell you what it finds.
-
-## Bringing over another AI's memory
-
-If you've been using ChatGPT, Grok or another AI, your new AI will offer this in your first chat. Ask your old AI: *"Write down everything you remember about me, everything we've worked on, and everything I've told you I want. In full."* Paste its answer into your new chat. Your AI saves it and files every piece where it belongs.
-
-## What's inside, and what it can do for you
-
-You never need to open it, but it's yours to look at. The folder is the AI's memory, already laid out like a life, and every page knows what your AI can actually do for you there. Most people don't know what to ask an AI for. I didn't, until I found out by accident that mine could read and send my texts.
-
-| Room | What your AI can do for you there |
+| Area | What your AI can take off your plate |
 |---|---|
-| **You** | Learn what you're working toward, what's going on with you, and how you like to be talked to |
-| **Family, friends** | Read and send your texts and emails when you say, keep the birthdays, help with the hard messages |
-| **Money, investing** | Show you where your money goes, find your subscriptions, build you a dashboard of what you own (never passwords or account numbers) |
-| **Work** | Connect to Slack and your work email, and keep a map of who's who |
-| **Health** | Keep your insurance and prescriptions straight from a photo, remind you before refills, write the list for your doctor |
-| **Tech** | Fix what won't work, and connect to more of your life |
-| **Goals, dates** | Hold your someday plans; put reminders where you'll see them |
-| **Projects, interests** | Ask what success looks like to you; find the next thing you'll love |
-| **Me** | Who your AI is |
+| **You** | Learn what you're working toward, what's going on this week, and how you actually like to be talked to |
+| **Family & friends** | Read and send your texts and emails when you say, keep birthdays straight, help with the hard messages |
+| **Money & investing** | Show where your money goes, spot forgotten subscriptions, build you a dashboard of what you own (never passwords or account numbers) |
+| **Work** | Connect to Slack and work email, keep a map of who's who, prep you before meetings |
+| **Health** | Keep insurance and prescriptions straight from a photo, remind you before refills, write the list for your doctor |
+| **Tech** | Fix what won't work on your computer, and connect more of your life |
+| **Goals & dates** | Hold your someday plans and put reminders where you'll actually see them |
+| **Projects & interests** | Ask what success looks like to you, build custom pages for your hobbies, find the next thing you'll love |
+| **Your AI** | Who it is, its voice, and how you two work together |
 
-Every page has a word. If you say the word ("money," "family," "dates"), or just talk about it, the AI reads that page first. As your life fills it in, the AI adds pages of its own: a page for your grandson, a page for the trip you're planning.
+You never have to touch a single file—just talk about your day. As your life fills in, your AI creates new pages on its own: a page for your grandson, a page for a trip you're planning, a page for whatever you're into.
 
-## Seeing its memory
+---
 
-After an hour or two, ask your AI to set up **[Homebase](https://github.com/HunterBryson/the-homebase)**. It draws this folder as a living web you can look at, lets you flag anything that's wrong with one tap, and lights up whatever your AI just learned.
+## Snap on visual builds whenever you want—your AI handles everything
+
+![Start with memory, add visual tools whenever you want](docs/plugin-map.png)
+
+Start with **the shelves** on its own. Whenever you're ready to see what else is possible, you don't download installers, hunt through settings, or configure a single thing yourself—**you just ask your AI in plain English:**
+
+- **"Set up Homebase for us."** → Your AI installs **[Homebase](https://github.com/HunterBryson/the-homebase)**, connects it to your memory, and opens a live visual map of everything it knows—lighting up new memories as you talk and letting you flag anything off with one tap.
+- **"Put The Glass on my screen."** → Your AI installs **[The Glass](https://github.com/HunterBryson/the-glass)**, giving you a see-through layer right over your desktop so you and your AI can point at things and work on your screen together.
+- **"Let's try The Den."** → Your AI sets up **[The Den](https://github.com/HunterBryson/the-den)**, a shared visual table for dropping notes, cards, and big ideas side by side.
+
+Your AI pulls the build down, wires it straight into your memory, and opens it up—**you just start using it and having fun.**
+
+---
+
+## What every day actually feels like
+
+- **Pick up right where you left off:** Open **Claude (Code tab)** or **Antigravity** in your **My Brain** folder and say hi. It reads its memory first, checks what's waiting, and jumps right in. Zero catching it up.
+- **Just talk normally:** Think out loud, ask for help, tell it about your day. When something matters, it files it automatically and tells you where (*"Saved to money"*).
+- **Ask or fix anything anytime:** *"What do you know about my health?"* or *"Actually, Linda's birthday is the 4th."* It fixes its memory on the spot, not just the reply.
+- **Zero housekeeping ("the sleep"):** When you're done, just say goodnight or close the window. Behind the scenes, your AI reads the chat back, puts everything where it belongs, clears out what changed, and leaves itself a note for tomorrow.
+- **New chat or old chat—both work:** Start fresh whenever you want. If a chat gets long enough to slow down, your AI will tell you once that a fresh one will be quicker.
+
+<details>
+<summary>Curious how "the sleep" works behind the scenes?</summary>
+
+Odie and I started out tidying memory by hand at the end of every chat—with a magic word and a note I pasted into the next chat. When the first person outside my house tried it, that was the hardest part to get used to, so here your AI does all of it for you: either when you say goodnight, or the next time you say hi if you just closed the window.
+
+In the Claude desktop app, you can even watch it happen: your AI pins each live chat in your sidebar and unpins it once it has slept, so anything still pinned is a chat it hasn't sorted yet. If something ever feels off when a new chat opens (*"you forgot the trip"*), just say so and it adjusts how it sleeps. **[SLEEP.md](SLEEP.md)** has the full story.
+
+</details>
+
+---
 
 ## Where this stands, honestly
 
-I haven't been able to make a memory framework that manages itself. Even in my own use, I spend a lot of time looking after my AI's memory with him, reading it, flagging what's off and deciding together what stays. This is my attempt at something a new AI and a new person can pick up and use well from day one. It's not finished, and I'll be improving it for years to come.
+I haven't been able to make a memory framework that manages itself. Even in my own use, I spend a lot of time looking after my AI's memory with him, reading it, flagging what's off, and deciding together what stays. This is my attempt at something a new AI and a new person can pick up and use well from day one. It's not finished, and I'll be improving it for years to come.
 
-## Questions people ask
+---
 
-**Is my information sent anywhere?** It lives in a folder on your computer. Your conversations go to your AI model like any chat, but the memory itself stays in that folder.
+## Quick answers
 
-**What if it remembers something wrong or out of date?** Tell it, in any words ("that's old," "I moved"). It fixes the line in its memory right then and looks for the same thing anywhere else, so the old version doesn't keep coming back. Every save is kept in that folder's own history on your computer, so nothing gets lost by accident.
+**Is my information sent anywhere?**
+It lives in a plain folder on your own computer. Your conversations go to your AI model like any chat, but the memory itself stays right on your machine.
 
-**Does it cost anything beyond your AI app?** No. This is free and open (MIT license).
+**What if it remembers something wrong or out of date?**
+Tell it in any words (*"that's old," "I moved"*). It updates its memory right then and checks for the old version anywhere else so it doesn't keep coming back. Every save is kept in that folder's local history, so nothing gets lost by accident.
+
+**Does it cost anything beyond my AI app?**
+No. This is free and open (MIT license).
+
+<details>
+<summary>Wait—it seems like it forgot me!</summary>
+
+Almost always, you're just in the wrong spot:
+1. **Are you in Claude's Code tab or Antigravity on your own computer?** The Claude Chat tab, website, phone app, and cloud sessions have no access to your local memory folder.
+2. **Are you in your `My Brain` folder?** In Claude's Code tab, start a new chat and pick **My Brain** under **Choose environment**. In Antigravity, make sure your **My Brain** folder is the open folder.
+3. **Still feels off?** Tell it: *"You don't seem to remember me. Check your memory folder."* It'll inspect the folder and tell you exactly what it finds.
+
+</details>
+
+---
 
 ## Something broke, or you have an idea
 
-Open an issue and pick a form; your AI can fill it in for you. Rather email? Write to hello@workbenchagents.com. Every issue and email reaches me, and I answer it myself, usually within a few days. Security problems go privately: see [SECURITY.md](https://github.com/HunterBryson/.github/blob/main/SECURITY.md).
+Open an issue and pick a form—your AI can even fill it in for you. Rather email? Write to hello@workbenchagents.com. Every issue and email reaches me, and I answer it myself, usually within a few days. Security problems go privately: see [SECURITY.md](https://github.com/HunterBryson/.github/blob/main/SECURITY.md).
 
 Built by me, Hunter Bryson, with Odie, for **Claude and Antigravity**. Nothing in here is about us once your AI starts filling it in.
