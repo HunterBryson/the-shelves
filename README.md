@@ -4,8 +4,6 @@
 
 A persistent memory folder for **Claude or Antigravity**—your life, your schedule, your people, and how you work—kept on your own computer so your AI picks up where you left off every time.
 
-![Day 1 to Week 2 with The Shelves](docs/shelves-hero.png)
-
 You don't organize anything. Your AI files what matters as you talk and keeps its shelves tidy behind the scenes.
 
 ## How a normal week unfolds
@@ -16,8 +14,6 @@ You don't organize anything. Your AI files what matters as you talk and keeps it
 - **Week 2 — Just open chat and crush it:** Separate **Work** and **Personal** systems, built-in reminders, your inbox checked automatically when a chat opens, sleep housekeeping when you close out, and any rough bump fixed in one conversation.
 
 ## How all the builds fit together
-
-![Four Wave-1 builds plugged into each other](docs/plugin-map.png)
 
 Start with **the shelves**—or any single repo—and add the others whenever you want. `node tools/fit.mjs` wires them together automatically across **Claude and Antigravity**.
 
