@@ -49,14 +49,14 @@ The sleep is the one moment nobody is waiting on an answer, so it's when the sor
 
 ## How the folder carries it
 
-A few small scripts in `.claude/hooks/` run by themselves. They're plain text; you can read them.
+A few small scripts run by themselves. They're plain text; you can read them. The work is in `hooks-core/`, shared by both apps this folder runs from (Claude and Google Antigravity), and `.claude/hooks/` and `.agents/hooks/` are thin doors into it. The names below are Claude's; Antigravity's do the same jobs.
 
-- **When a chat starts** (`start.sh`): tells the AI the date and, if an earlier chat closed without a sleep, points it at that chat to read back whole before it greets you. That chat stays waiting until it has been.
-- **Also when a chat starts** (`pull.sh`): puts the pages named in "Pull on waking" in front of the AI, whole, in pieces that each make sense alone.
-- **With each message you send** (`remind.sh`): reminds the AI to save as it goes, and tells it when you've been away for hours, when the chat has gotten long, when it still owes a sleep, and when a save didn't go through.
-- **After each reply** (`save.sh`): saves the folder, so every version of the AI's memory is kept and a bad rewrite can be undone. (That history lives on this computer; it's an undo, not a backup.) Files that aren't memory, like a PDF or anything you put in `drop/`, are read but never kept in it. When a sleep has landed, marks each chat as sorted only as far as the AI read it back. A "Sleep:" with no readback behind it moves nothing, and the reminder says so.
+- **When a chat starts** (`start.mjs`): tells the AI the date and, if an earlier chat closed without a sleep, points it at that chat to read back whole before it greets you. That chat stays waiting until it has been.
+- **Also when a chat starts** (`pull.mjs`): puts the pages named in "Pull on waking" in front of the AI, whole, in pieces that each make sense alone.
+- **With each message you send** (`remind.mjs`): reminds the AI to save as it goes, and tells it when you've been away for hours, when the chat has gotten long, when it still owes a sleep, and when a save didn't go through.
+- **After each reply** (`save.mjs`): saves the folder, so every version of the AI's memory is kept and a bad rewrite can be undone. (That history lives on this computer; it's an undo, not a backup.) Files that aren't memory, like a PDF or anything you put in `drop/`, are read but never kept in it. When a sleep has landed, marks each chat as sorted only as far as the AI read it back. A "Sleep:" with no readback behind it moves nothing, and the reminder says so.
 
-`chat.sh` prints a chat file as plain conversation, so the AI can read it back without wading through its own tool output: everything you said (your long messages whole, screenshots marked) and what it said, with the app's own notices left out. Even a chat that filled the AI's head reads back small, because tools and pictures are most of a chat. A long readback comes in parts (the app only shows a preview of anything very long), and as the parts are read, in order, it leaves a receipt: that receipt is what makes a sleep count.
+`chat.mjs` prints a chat file as plain conversation, so the AI can read it back without wading through its own tool output: everything you said (your long messages whole, screenshots marked) and what it said, with the app's own notices left out. Even a chat that filled the AI's head reads back small, because tools and pictures are most of a chat. A long readback comes in parts (the app only shows a preview of anything very long), and as the parts are read, in order, it leaves a receipt: that receipt is what makes a sleep count.
 
 - **What's pinned hasn't slept yet.** In the Claude desktop app, your AI pins each new chat in the sidebar when it starts, and unpins it at the sleep. So at a glance you can see which chats it has sorted and which it hasn't. A chat still pinned after you closed it gets sorted the next time you say hi.
 
