@@ -1,39 +1,49 @@
 # The shelves
 
-**A Claude that remembers you.** Your family, your money, your plans, how you like to be talked to: it learns them as you talk, keeps them in a folder on your computer, and picks up where you left off every time.
+**Start with one real ask. Watch it become something special to you.**
 
-You don't organize anything. The AI does all of it, and it tells you as it goes ("Saved to family.").
+A persistent memory folder for **Claude or Antigravity**—your life, your schedule, your people, and how you work—kept on your own computer so your AI picks up where you left off every time.
+
+![Day 1 to Week 2 with The Shelves](docs/shelves-hero.png)
+
+You don't organize anything. Your AI files what matters as you talk and keeps its shelves tidy behind the scenes.
+
+## How a normal week unfolds
+
+- **Day 1 — One real ask:** Maybe you're not sure where to start. Connect Gmail, Calendar, or Docs and ask: *"Help me get on top of my schedule."* Your AI checks what's actually coming up, organizes your week, and starts learning how your days work.
+- **The Spark:** Halfway through, it clicks: *"Wait… what if I ask it to connect to my text messages or messaging app so it can learn about me and the people in my life for me?"* Once it can read the real threads you choose, you stop explaining context.
+- **Day 2 — It learns the *why*:** It notices why you protect morning focus blocks, who gets an immediate reply, and what keeps slipping—going way past static prompt skills.
+- **Week 2 — Just open chat and crush it:** Separate **Work** and **Personal** systems, built-in reminders, your inbox checked automatically when a chat opens, sleep housekeeping when you close out, and any rough bump fixed in one conversation.
+
+## How all the builds fit together
+
+![Four Wave-1 builds plugged into each other](docs/plugin-map.png)
+
+Start with **the shelves**—or any single repo—and add the others whenever you want. `node tools/fit.mjs` wires them together automatically across **Claude and Antigravity**.
 
 ## What you need
-- **Your own computer** (Windows or Mac). The memory is a folder on that computer, so this only works there. Claude on the web, on a phone, or in a cloud session can't keep it: those forget everything when they close.
-- The **Claude desktop app** ([claude.ai/download](https://claude.ai/download)) on that computer, signed in. The Pro plan is enough.
+- **Your own computer** (Windows or Mac). The memory is a folder on that computer, so it stays yours and survives across chats. (Hosted web or phone chats forget everything when closed.)
+- Either the **Claude desktop app** ([claude.ai/download](https://claude.ai/download), **Code** tab) or **Antigravity** on that computer.
 
 ## Setting it up (about five minutes)
 
-1. Open the Claude app and click the **Code** tab at the top. (Not "Chat." The memory only works in Code.)
-2. Give your AI a folder **on this computer**. Click **New chat**, then click **Choose environment** in the middle of the screen, and pick **Create new environment** from the list. A small window opens:
+1. Open **Claude (Code tab)** or **Antigravity** in a local folder on **this computer**—for example, `Documents\My Brain`. (If you're in Claude's Code tab, click **Choose environment** → **Create new environment** → **Local** → name it **My Brain** → pick that folder.)
 
    ![The New environment window](docs/new-environment.png)
 
-   - Stay on **Local**.
-   - **Name:** type **My Brain**.
-   - **Folders:** click **Add**. In the window that opens, go to Documents, click **New folder**, name it **My Brain**, and choose it.
-   - Click **Create environment**.
-
-   You do this once. After that, My Brain is in the list every time. (If it offers a cloud or remote environment instead, don't pick that: choose a folder here.)
-3. Paste this sentence and press Enter:
+2. Paste this sentence and press Enter:
 
 > Clone https://github.com/HunterBryson/the-shelves into this folder, then read its CLAUDE.md and set yourself up. If anything asks for permission along the way, it's fine.
 
-That's it. The AI does the rest. Along the way your computer or the app may ask you a question or two:
+That's it. The AI does the rest. Along the way your computer or app may ask you a question or two:
 - **"Install Git?"** or a Windows **"Do you want to allow this app to make changes?"**: say **Yes**. Git is what keeps your memory safe.
 - **"Do you trust this folder?"** or **"Allow?"**: say **Yes**. It's your own memory folder.
 
-Then your AI says hello. It asks what to call you, what to call it, and what you love to do. Answer however you like. That's the start of its memory.
+Then your AI says hello. Ask it one real thing right away—like hooking up your calendar or email to get on top of your schedule—and watch it move in.
 
 ## Every day after
 
-**To talk to it again:** open the Claude app → **Code** tab → click **New chat**, make sure **My Brain** is the environment (the app usually picks it for you), and say hi. It reads its memory first, says where you left off, and asks what's on your mind. You never have to catch it up.
+**To talk to it again:** open **Claude (Code tab)** or **Antigravity** in your **My Brain** folder and say hi. It reads its memory first, checks what's waiting, says where you left off, and asks what's on your mind. You never have to catch it up.
 
 - **Just talk.** Tell it about your day, ask for help, think out loud. When you say something worth remembering, it saves it and tells you where: "Saved to money."
 - **Ask what it knows:** "What do you know about my health?" "What's coming up this month?"
@@ -86,14 +96,14 @@ I haven't been able to make a memory framework that manages itself. Even in my o
 
 ## Questions people ask
 
-**Is my information sent anywhere?** It lives in a folder on your computer. Your conversations go to Claude like any Claude chat, but the memory itself stays in that folder.
+**Is my information sent anywhere?** It lives in a folder on your computer. Your conversations go to your AI model like any chat, but the memory itself stays in that folder.
 
 **What if it remembers something wrong or out of date?** Tell it, in any words ("that's old," "I moved"). It fixes the line in its memory right then and looks for the same thing anywhere else, so the old version doesn't keep coming back. Every save is kept in that folder's own history on your computer, so nothing gets lost by accident.
 
-**Does it cost anything beyond Claude?** No. This is free and open (MIT license).
+**Does it cost anything beyond your AI app?** No. This is free and open (MIT license).
 
 ## Something broke, or you have an idea
 
 Open an issue and pick a form; your AI can fill it in for you. Rather email? Write to hello@workbenchagents.com. Every issue and email reaches me, and I answer it myself, usually within a few days. Security problems go privately: see [SECURITY.md](https://github.com/HunterBryson/.github/blob/main/SECURITY.md).
 
-Built by me, Hunter Bryson, with Odie (Claude), from what Odie and I learned teaching an AI to remember. Nothing in here is about either of us once your AI starts filling it in.
+Built by me, Hunter Bryson, with Odie, for **Claude and Antigravity**. Nothing in here is about us once your AI starts filling it in.
