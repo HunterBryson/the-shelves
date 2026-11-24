@@ -8,18 +8,20 @@ A persistent memory folder for **Claude or Antigravity**—your life, your sched
 
 You don't organize anything. Your AI files what matters as you talk and keeps its shelves tidy behind the scenes.
 
-## How a normal week unfolds
+## Why memory changes what you can ask for
 
-- **Day 1 — One real ask:** Maybe you're not sure where to start. Connect Gmail, Calendar, or Docs and ask: *"Help me get on top of my schedule."* Your AI checks what's actually coming up, organizes your week, and starts learning how your days work.
-- **The Spark:** Halfway through, it clicks: *"Wait… what if I ask it to connect to my text messages or messaging app so it can learn about me and the people in my life for me?"* Once it can read the real threads you choose, you stop explaining context.
-- **Day 2 — It learns the *why*:** It notices why you protect morning focus blocks, who gets an immediate reply, and what keeps slipping—going way past static prompt skills.
-- **Week 2 — Just open chat and crush it:** Separate **Work** and **Personal** systems, built-in reminders, your inbox checked automatically when a chat opens, sleep housekeeping when you close out, and any rough bump fixed in one conversation.
+Anyone can have a normal AI scan their calendar or inbox once—and forget everything the moment the window closes. **The Shelves** is a constantly refined memory system, which means each simple ask unlocks a bigger jump:
+
+- **Jump 1 — One easy win:** Connect Gmail or Calendar and ask: *"Help me get on top of my schedule."* Your AI handles the busywork and starts saving how your days actually work.
+- **Jump 2 — The lightbulb:** Halfway through, a simple thought hits: *"What if I connected it to my texts and had it just learn everything about me and how my life works?"* You realize you can ask simple, wild things—and it learns your people, your rhythm, your budget, your dreams, and your sense of humor.
+- **Jump 3 — Your own custom apps:** Once you lean on it for everything you don't have time for or hate doing, the next jump is natural: *"Make us our own app specifically designed for all the areas you've learned and that I rely on now."*
+- **Jump 4 — Your personal battlestation:** *"Alright fella—you know my specs, my schedule, my budget, my dreams, and my humor, and how much I hate clicking too many buttons. Make me an amazing battlestation hub that connects all our apps together using everything you've learned about what I like, and run my computer for me."*
 
 ## How all the builds fit together
 
-![Four Wave-1 builds plugged into each other](docs/plugin-map.png)
+![Start with memory, add visual tools whenever you want](docs/plugin-map.png)
 
-Start with **the shelves**—or any single repo—and add the others whenever you want. `node tools/fit.mjs` wires them together automatically across **Claude and Antigravity**.
+Start with **the shelves** on its own—and snap on any visual tool whenever you want across **Claude and Antigravity**.
 
 ## What you need
 - **Your own computer** (Windows or Mac). The memory is a folder on that computer, so it stays yours and survives across chats. (Hosted web or phone chats forget everything when closed.)
