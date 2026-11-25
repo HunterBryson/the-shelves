@@ -74,6 +74,7 @@ Start with **the shelves** on its own. Whenever you're ready to see what else is
 - **"Set up Homebase for us."** → Your AI installs **[Homebase](https://github.com/HunterBryson/the-homebase)**, connects it to your memory, and opens a live visual map of everything it knows—lighting up new memories as you talk and letting you flag anything off with one tap.
 - **"Put The Glass on my screen."** → Your AI installs **[The Glass](https://github.com/HunterBryson/the-glass)**, giving you a see-through layer right over your desktop so you and your AI can point at things and work on your screen together.
 - **"Let's try The Den."** → Your AI sets up **[The Den](https://github.com/HunterBryson/the-den)**, a shared visual table for dropping notes, cards, and big ideas side by side.
+- **"Set up Monty's Floor for us."** → Your AI installs **[Monty's Floor](https://github.com/HunterBryson/monty-floor)**, putting all your **Claude and Antigravity** agents in one dark sidebar for desktop and phone—so they can join the exact same rooms, challenge each other live, and save what landed back into your shelves.
 
 Your AI pulls the build down, wires it straight into your memory, and opens it up—**you just start using it and having fun.**
 
