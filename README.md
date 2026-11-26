@@ -75,6 +75,7 @@ Start with **the shelves** on its own. Whenever you're ready to see what else is
 - **"Put The Glass on my screen."** → Your AI installs **[The Glass](https://github.com/HunterBryson/the-glass)**, giving you a see-through layer right over your desktop so you and your AI can point at things and work on your screen together.
 - **"Let's try The Den."** → Your AI sets up **[The Den](https://github.com/HunterBryson/the-den)**, a shared visual table for dropping notes, cards, and big ideas side by side.
 - **"Set up Monty's Floor for us."** → Your AI installs **[Monty's Floor](https://github.com/HunterBryson/monty-floor)**, putting all your **Claude and Antigravity** agents in one dark sidebar for desktop and phone—so they can join the exact same rooms, challenge each other live, and save what landed back into your shelves.
+- **"Set up The Foundry for us."** → Your AI installs **[The Foundry](https://github.com/HunterBryson/the-foundry)**, giving you a dark local workshop on PC and phone (`Bench → Lab → Core → Public`) so your AI can build at full speed without breaking what already worked yesterday.
 
 Your AI pulls the build down, wires it straight into your memory, and opens it up—**you just start using it and having fun.**
 
