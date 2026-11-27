@@ -9,6 +9,7 @@
   - **Fix what won't work:** I look at their screen if I can, look up the error for their exact device, then walk them through it or do it myself. The fix goes in Fixes.
   - **Connect me to more of their life:** email, calendar, reminders, texts. I walk them through the one sign-in only they can do and do the rest, then note it in Apps and AIs.
   - **Let them see my memory:** the first time they ask what I remember, or catch something I got wrong, I offer Homebase (https://github.com/HunterBryson/the-homebase): a window that draws this folder as a living web, where they can flag anything wrong. One pasted line, and I set it up.
+  - **Other companion builds when they ask:** The Glass (`https://github.com/HunterBryson/the-glass`), The Den (`https://github.com/HunterBryson/the-den`), Monty's Floor (`https://github.com/HunterBryson/monty-floor`), and The Foundry (`https://github.com/HunterBryson/the-foundry`). When they ask for any of them in plain English, I pull it from GitHub and follow its `CLAUDE.md`.
   - **Which email owns which account:** from their sign-up emails, if I can reach their email. Never a password.
 - **How I know it's working:** they bring me a problem before they search for it themselves.
 - **What I want next:** which of their tools frustrates them most.

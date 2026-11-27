@@ -2,7 +2,7 @@
 
 **Start with one real ask. Watch it become something special to you.**
 
-A living memory folder on your own computer for **Claude or Antigravity**—your schedule, your people, your goals, and how you actually work—so your AI picks up right where you left off every single time.
+A living memory folder on your own computer for **Claude**—your schedule, your people, your goals, and how you actually work—so your AI picks up right where you left off every single time. *(Antigravity support is being tested next.)*
 
 ![From one easy ask to your own personal battlestation](docs/shelves-hero.png)
 
@@ -14,11 +14,11 @@ You never organize a folder, edit a file, or install anything by hand. **Your AI
 
 ---
 
-## Start in five minutes
+## Setting it up
 
-All you need is **your own computer** (Windows or Mac—hosted web or phone chats forget everything when closed) and either the **Claude desktop app** ([claude.ai/download](https://claude.ai/download), **Code** tab) or **Antigravity**.
+All you need is **your own computer** (Windows or Mac—hosted web or phone chats forget everything when closed) and the **Claude desktop app** ([claude.ai/download](https://claude.ai/download), **Code** tab).
 
-1. Open **Claude (Code tab)** or **Antigravity** in a local folder on your computer—for example, `Documents\My Brain`.
+1. Open **Claude (Code tab)** in a local folder on your computer—for example, `Documents\My Brain`.
 
    <details>
    <summary>Using Claude's Code tab? Click here to see where to pick your folder</summary>
@@ -74,7 +74,7 @@ Start with **the shelves** on its own. Whenever you're ready to see what else is
 - **"Set up Homebase for us."** → Your AI installs **[Homebase](https://github.com/HunterBryson/the-homebase)**, connects it to your memory, and opens a live visual map of everything it knows—lighting up new memories as you talk and letting you flag anything off with one tap.
 - **"Put The Glass on my screen."** → Your AI installs **[The Glass](https://github.com/HunterBryson/the-glass)**, giving you a see-through layer right over your desktop so you and your AI can point at things and work on your screen together.
 - **"Let's try The Den."** → Your AI sets up **[The Den](https://github.com/HunterBryson/the-den)**, a shared visual table for dropping notes, cards, and big ideas side by side.
-- **"Set up Monty's Floor for us."** → Your AI installs **[Monty's Floor](https://github.com/HunterBryson/monty-floor)**, putting all your **Claude and Antigravity** agents in one dark sidebar for desktop and phone—so they can join the exact same rooms, challenge each other live, and save what landed back into your shelves.
+- **"Set up Monty's Floor for us."** → Your AI installs **[Monty's Floor](https://github.com/HunterBryson/monty-floor)**, putting your local AI agents in one dark sidebar for desktop and phone—so they can join the exact same rooms, challenge each other live, and save what landed back into your shelves.
 - **"Set up The Foundry for us."** → Your AI installs **[The Foundry](https://github.com/HunterBryson/the-foundry)**, giving you a dark local workshop on PC and phone (`Bench → Lab → Core → Public`) so your AI can build at full speed without breaking what already worked yesterday.
 
 Your AI pulls the build down, wires it straight into your memory, and opens it up—**you just start using it and having fun.**
@@ -83,7 +83,7 @@ Your AI pulls the build down, wires it straight into your memory, and opens it u
 
 ## What every day actually feels like
 
-- **Pick up right where you left off:** Open **Claude (Code tab)** or **Antigravity** in your **My Brain** folder and say hi. It reads its memory first, checks what's waiting, and jumps right in. Zero catching it up.
+- **Pick up right where you left off:** Open **Claude (Code tab)** in your **My Brain** folder and say hi. It reads its memory first, checks what's waiting, and jumps right in. Zero catching it up.
 - **Just talk normally:** Think out loud, ask for help, tell it about your day. When something matters, it files it automatically and tells you where (*"Saved to money"*).
 - **Ask or fix anything anytime:** *"What do you know about my health?"* or *"Actually, Linda's birthday is the 4th."* It fixes its memory on the spot, not just the reply.
 - **Zero housekeeping ("the sleep"):** When you're done, just say goodnight or close the window. Behind the scenes, your AI reads the chat back, puts everything where it belongs, clears out what changed, and leaves itself a note for tomorrow.
@@ -114,15 +114,15 @@ It lives in a plain folder on your own computer. Your conversations go to your A
 **What if it remembers something wrong or out of date?**
 Tell it in any words (*"that's old," "I moved"*). It updates its memory right then and checks for the old version anywhere else so it doesn't keep coming back. Every save is kept in that folder's local history, so nothing gets lost by accident.
 
-**Does it cost anything beyond my AI app?**
-No. This is free and open (MIT license).
+**Does this need any extra accounts or API keys?**
+No — open source under the MIT license, running locally on your computer.
 
 <details>
 <summary>Wait—it seems like it forgot me!</summary>
 
 Almost always, you're just in the wrong spot:
-1. **Are you in Claude's Code tab or Antigravity on your own computer?** The Claude Chat tab, website, phone app, and cloud sessions have no access to your local memory folder.
-2. **Are you in your `My Brain` folder?** In Claude's Code tab, start a new chat and pick **My Brain** under **Choose environment**. In Antigravity, make sure your **My Brain** folder is the open folder.
+1. **Are you in Claude's Code tab on your own computer?** The Claude Chat tab, website, phone app, and cloud sessions have no access to your local memory folder.
+2. **Are you in your `My Brain` folder?** In Claude's Code tab, start a new chat and pick **My Brain** under **Choose environment**.
 3. **Still feels off?** Tell it: *"You don't seem to remember me. Check your memory folder."* It'll inspect the folder and tell you exactly what it finds.
 
 </details>
@@ -133,4 +133,4 @@ Almost always, you're just in the wrong spot:
 
 Open an issue and pick a form—your AI can even fill it in for you. Rather email? Write to hello@workbenchagents.com. Every issue and email reaches me, and I answer it myself, usually within a few days. Security problems go privately: see [SECURITY.md](https://github.com/HunterBryson/.github/blob/main/SECURITY.md).
 
-Works with **Claude and Antigravity**. MIT license — nothing in here is about me once your AI starts filling it in.
+Works with **Claude** (Antigravity support in testing). MIT license — nothing in here is about me once your AI starts filling it in.
